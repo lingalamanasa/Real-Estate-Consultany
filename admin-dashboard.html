@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate Executive Cockpit | Stackly Admin Cockpit</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- ==========================================
+       PAGE PRELOADER: STACKLY ADMIN COCKPIT
+       ========================================== -->
+  <div id="pagePreloader" class="page-preloader" aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-logo-wrap">
+        <img src="assets/images/stackly-mark.png" alt="Stackly" class="preloader-logo-mark-img">
+        <div class="preloader-pulse-ring"></div>
+      </div>
+      <div class="preloader-brand">
+        <span class="preloader-brand-main">STACKLY</span>
+        <span class="preloader-brand-sub">ADMIN COCKPIT</span>
+      </div>
+      <div class="preloader-bar">
+        <div class="preloader-progress"></div>
+      </div>
+      <div class="preloader-tagline">Platform Operations & Governance Dashboard</div>
+    </div>
+  </div>
+
+  <div class="dashboard-layout">
+    <!-- LEFT SIDEBAR -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <a href="admin-dashboard.html" class="stackly-brand">
+          <img src="assets/images/stackly-mark.png" alt="Stackly" class="stackly-brand-img" style="height:36px;width:auto;filter:brightness(0) invert(1);"><span class="stackly-brand-name" style="font-family:var(--font-heading);font-size:1.4rem;font-weight:900;color:#ffffff;letter-spacing:0.5px;">Stackly</span>
+        </a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-item active">
+          <a href="admin-dashboard.html">
+            <span><i class="fa-solid fa-chart-column"></i></span>
+            <span>Executive Overview</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="admin-leads.html">
+            <span><i class="fa-solid fa-ticket"></i></span>
+            <span>Lead & Token Queue</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="admin-inventory.html">
+            <span><i class="fa-solid fa-building"></i></span>
+            <span>Inventory & Roster</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="admin-occupancy.html">
+            <span><i class="fa-solid fa-arrow-trend-up"></i></span>
+            <span>Occupancy & Wards</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="admin-telemetry.html">
+            <span><i class="fa-solid fa-brain"></i></span>
+            <span>Risk Telemetry</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="admin-legal.html">
+            <span><i class="fa-solid fa-file-contract"></i></span>
+            <span>Diagnostic & Title Lab</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="admin-revenue.html">
+            <span><i class="fa-solid fa-credit-card"></i></span>
+            <span>Revenue & TPA Claims</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Bottom Profile -->
+      <div class="sidebar-footer">
+        <div class="user-profile-badge">
+          <div class="avatar-initials">MA</div>
+          <div class="user-info-text">
+            <div class="user-name-line">Manu</div>
+            <div class="user-email-line">Chief Operations Director</div>
+          </div>
+        </div>
+        <button class="btn-logout-sidebar btn-logout-action">
+          <span><i class="fa-solid fa-arrow-right"></i></span> LOGOUT ADMIN
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN VIEWPORT -->
+    <div style="flex: 1; display: flex; flex-direction: column;">
+      <!-- Mobile Bar -->
+      <div class="mobile-dash-header">
+        <a href="admin-dashboard.html" class="stackly-brand">
+          <img src="assets/images/stackly-logo-light.png" alt="Stackly" class="stackly-brand-img" style="height: 32px;">
+        </a>
+        <button id="dashSidebarToggle" style="background:none; color:#ffffff; font-size:1.5rem; cursor:pointer;"><i class="fa-solid fa-bars"></i></button>
+      </div>
+
+      <main class="dashboard-main">
+        <!-- Topbar -->
+        <div class="dashboard-topbar">
+          <div class="dash-heading-wrap">
+            <div class="dash-user-welcome-chip">
+              <i class="fa-solid fa-circle-user"></i>
+              <span>Signed in as: <strong class="current-user-email">manu@gmail.com</strong></span>
+            </div>
+            <h1>Real Estate Executive Cockpit <i class="fa-solid fa-chart-column"></i></h1>
+            <p class="dash-subtext">Salem Center operational census, inventory occupancy, project telemetry, and consultant throughput.</p>
+            <div class="dash-actions-row" style="margin-top: 1.2rem;">
+              <button class="btn-dash-outline btn-export-census" onclick="window.location='404.html'">Export Census</button>
+            <button class="btn-dash-primary" onclick="window.location='404.html'">
+              <i class="fa-solid fa-plus"></i> CALL NEXT OPD TOKEN
+            </button>
+            </div>
+          </div>
+          <div class="dash-user-profile-badge">
+            <span class="current-user-email">manu@gmail.com</span>
+            <div class="avatar-initials current-user-initials" style="width: 34px; height: 34px;">MA</div>
+          </div>
+        </div>
+
+
+        <!-- Section 1: Operational Telemetry & Portfolio Census -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-building-circle-check"></i></span> Section 1: Operational Telemetry & Portfolio Census
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Manage <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Real-time telemetry across Salem Main Center and Outpatient Chambers</p>
+          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.2rem; margin-bottom: 0; align-items: center;">
+            <div class="dash-metrics-grid" style="margin-bottom: 0;">
+              <div class="metric-card-box">
+                <div class="metric-header">ACTIVE ASSETS / PROPERTIES</div>
+                <div class="metric-number">38 / 48</div>
+                <div class="metric-sub-detail">79% Occupancy (Healthy)</div>
+              </div>
+              <div class="metric-card-box">
+                <div class="metric-header">DIRECT CLOSURE RATE</div>
+                <div class="metric-number">90.4 %</div>
+                <div class="metric-sub-detail">Institutional mandate</div>
+              </div>
+              <div class="metric-card-box">
+                <div class="metric-header">PRIME INVENTORY PIPELINE</div>
+                <div class="metric-number">8 / 12</div>
+                <div class="metric-sub-detail">4 Under Institutional Review</div>
+              </div>
+              <div class="metric-card-box">
+                <div class="metric-header">TITLE AUDIT SPEED</div>
+                <div class="metric-number">&lt; 2.1 Min</div>
+                <div class="metric-sub-detail">Instant Legal Clearance</div>
+              </div>
+            </div>
+            <div style="background: #ffffff; border: 1px solid #e7e2f0; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(26,7,54,0.04);">
+              <img src="assets/images/admin-dash-intel-market-growth-2.webp" alt="Telemetry Growth" style="width: 100%; height: 160px; object-fit: cover; display: block;" loading="eager">
+              <div style="padding: 0.6rem 0.8rem; font-size: 0.75rem; font-weight: 700; color: #1a0736; display: flex; justify-content: space-between;">
+                <span>Salem Metro Live Telemetry</span>
+                <span style="color: #10b981;"><i class="fa-solid fa-circle" style="font-size:0.55rem; color:#10b981; margin-right:4px;"></i> Online</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Senior Advisory Chamber & Active Consultations -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-user-tie"></i></span> Section 2: Senior Advisory Chamber & Active Consultations
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Manage <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Real-time client flow across 4 active consultation chambers</p>
+          <div class="category-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+            <div class="category-card" style="text-align: left; background:#ffffff; overflow: hidden; padding: 0;">
+              <div style="height: 120px; overflow: hidden; position: relative;">
+                <img src="assets/images/admin-dash-advisor-dr-shilpi-2.webp" alt="Dr. Shilpi Singh" style="width:100%; height:100%; object-fit: cover; object-position: center;" loading="eager">
+                <span class="status-badge active" style="position: absolute; top: 8px; right: 8px;">Chamber 1 Active</span>
+              </div>
+              <div style="padding: 1rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                  <span style="font-size: 0.75rem; color: #7e68ad; font-weight: 800;">TOKEN #11</span>
+                  <span style="font-size: 0.75rem; color: #10b981; font-weight: 700;">Wait: 18m</span>
+                </div>
+                <h3 style="font-size: 1.05rem; font-weight: 800; color: #1a0736; margin-bottom: 0.2rem;">Dr. Shilpi Singh</h3>
+                <div style="font-size: 0.8rem; color: #645e78; margin-bottom: 0.6rem;">Commercial Land Acquisition</div>
+                <div style="font-size: 0.82rem; color: #7e68ad; font-weight: 700;">Queue: 14 High-Net-Worth Clients</div>
+              </div>
+            </div>
+            <div class="category-card" style="text-align: left; background:#ffffff; overflow: hidden; padding: 0;">
+              <div style="height: 120px; overflow: hidden; position: relative;">
+                <img src="assets/images/admin-dash-advisor-ananya-sen-2.webp" alt="Dr. Ananya Sen" style="width:100%; height:100%; object-fit: cover; object-position: center;" loading="eager">
+                <span class="status-badge active" style="position: absolute; top: 8px; right: 8px;">Chamber 2 Active</span>
+              </div>
+              <div style="padding: 1rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                  <span style="font-size: 0.75rem; color: #7e68ad; font-weight: 800;">TOKEN #08</span>
+                  <span style="font-size: 0.75rem; color: #10b981; font-weight: 700;">Wait: 12m</span>
+                </div>
+                <h3 style="font-size: 1.05rem; font-weight: 800; color: #1a0736; margin-bottom: 0.2rem;">Dr. Ananya Sen</h3>
+                <div style="font-size: 0.8rem; color: #645e78; margin-bottom: 0.6rem;">Pre-Leased Commercial & SCO</div>
+                <div style="font-size: 0.82rem; color: #7e68ad; font-weight: 700;">Queue: 8 Institutional Clients</div>
+              </div>
+            </div>
+            <div class="category-card" style="text-align: left; background:#ffffff; overflow: hidden; padding: 0;">
+              <div style="height: 120px; overflow: hidden; position: relative;">
+                <img src="assets/images/admin-dash-advisor-meera-nair-2.webp" alt="Dr. Meera Nair" style="width:100%; height:100%; object-fit: cover; object-position: center;" loading="eager">
+                <span class="status-badge active" style="position: absolute; top: 8px; right: 8px;">Chamber 3 Active</span>
+              </div>
+              <div style="padding: 1rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                  <span style="font-size: 0.75rem; color: #7e68ad; font-weight: 800;">TOKEN #03</span>
+                  <span style="font-size: 0.75rem; color: #10b981; font-weight: 700;">Wait: 5m</span>
+                </div>
+                <h3 style="font-size: 1.05rem; font-weight: 800; color: #1a0736; margin-bottom: 0.2rem;">Dr. Meera Nair</h3>
+                <div style="font-size: 0.8rem; color: #645e78; margin-bottom: 0.6rem;">RERA Disputed Titles & Litigations</div>
+                <div style="font-size: 0.82rem; color: #7e68ad; font-weight: 700;">Queue: 3 High-Net-Worth Clients</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Live Consultation Intake & Client Processing Flow -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-hospital"></i></span> Section 3: Live Consultation Intake & Client Processing Flow
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Manage <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Active live-intake queue for inbound investor consultations and token tracking</p>
+          <table class="dash-table">
+            <thead><tr><th>Token</th><th>Investor Name</th><th>Category</th><th>Advisor</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td><strong>#TOK-041</strong></td><td>Vikram Malhotra</td><td>Commercial High-Yield</td><td>Dr. Shilpi Singh</td><td><span class="status-badge active">In Chamber</span></td><td><button class="btn-dash-outline" onclick="window.location='404.html'">Call Next</button></td></tr>
+              <tr><td><strong>#TOK-042</strong></td><td>Priya Sundaram</td><td>Luxury Villa Acquisition</td><td>Dr. Ananya Sen</td><td><span class="status-badge verified">Waiting (8m)</span></td><td><button class="btn-dash-outline" onclick="window.location='404.html'">Notify SMS</button></td></tr>
+              <tr><td><strong>#TOK-043</strong></td><td>Rameshwaram Mills Ltd</td><td>SCO Pre-Leased Mandate</td><td>Meera Nair</td><td><span class="status-badge pending">Arriving</span></td><td><button class="btn-dash-outline" onclick="window.location='404.html'">Check In</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Section 4: Platform Risk Radar & Critical Compliance Alerts -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-triangle-exclamation"></i></span> Section 4: Platform Risk Radar & Critical Compliance Alerts
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Manage <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Real-time alert engine monitoring RERA escrow compliance and land litigation filings</p>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1rem;">
+            <div style="background:#ffffff; border-left:4px solid #10b981; border-top:1px solid #e7e2f0; border-right:1px solid #e7e2f0; border-bottom:1px solid #e7e2f0; border-radius:10px; padding:1.2rem;">
+              <strong style="color:#1a0736;">RERA Escrow Compliance Check</strong>
+              <p style="font-size:0.85rem; color:#645e78; margin:6px 0;">All 18 partner developers verified compliant with 70% project account deposit mandate.</p>
+              <span class="status-badge verified">100% Compliant</span>
+            </div>
+            <div style="background:#ffffff; border-left:4px solid #06b6d4; border-top:1px solid #e7e2f0; border-right:1px solid #e7e2f0; border-bottom:1px solid #e7e2f0; border-radius:10px; padding:1.2rem;">
+              <strong style="color:#1a0736;">District SRO Stamp Duty Notice</strong>
+              <p style="font-size:0.85rem; color:#645e78; margin:6px 0;">Guideline value revision notification received for Salem West zone. Adjusting advisory calculator.</p>
+              <span class="status-badge pending">Under Review</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 5: Daily Financial Settlement & Escrow Velocity -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-sack-dollar"></i></span> Section 5: Daily Financial Settlement & Escrow Velocity
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Manage <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Daily commission realizations, escrow fee sweeps, and retained counsel disbursements</p>
+          <div style="background:#ffffff; border:1px solid var(--border-light); border-radius:14px; padding:1.2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+            <div>
+              <strong style="color:#1a0736; font-size:1.05rem;">Today's Gross Advisory Inflow: ₹ 14.80 L</strong>
+              <p style="font-size:0.85rem; color:#645e78; margin-top:4px;">12 Consultations Billed • 2 Deal Closures Completed • 0 Disputed Escrows.</p>
+            </div>
+            <button class="btn-dash-primary" onclick="window.location='404.html'"><i class="fa-solid fa-file-invoice-dollar"></i> Export Daily Ledger</button>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <div id="toastMessage" class="toast-message" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
+
+

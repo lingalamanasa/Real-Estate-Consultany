@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Occupancy & Tenant Wards | Stackly Admin Cockpit</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- ==========================================
+       PAGE PRELOADER: STACKLY ADMIN COCKPIT
+       ========================================== -->
+  <div id="pagePreloader" class="page-preloader" aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-logo-wrap">
+        <img src="assets/images/stackly-mark.png" alt="Stackly" class="preloader-logo-mark-img">
+        <div class="preloader-pulse-ring"></div>
+      </div>
+      <div class="preloader-brand">
+        <span class="preloader-brand-main">STACKLY</span>
+        <span class="preloader-brand-sub">ADMIN COCKPIT</span>
+      </div>
+      <div class="preloader-bar">
+        <div class="preloader-progress"></div>
+      </div>
+      <div class="preloader-tagline">Occupancy & Tenant Wards</div>
+    </div>
+  </div>
+
+  <div class="dashboard-layout">
+    <!-- LEFT SIDEBAR -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <a href="admin-dashboard.html" class="stackly-brand">
+          <img src="assets/images/stackly-mark.png" alt="Stackly" class="stackly-brand-img" style="height:36px;width:auto;filter:brightness(0) invert(1);"><span class="stackly-brand-name" style="font-family:var(--font-heading);font-size:1.4rem;font-weight:900;color:#ffffff;letter-spacing:0.5px;">Stackly</span>
+        </a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-item">
+          <a href="admin-dashboard.html">
+            <span><i class="fa-solid fa-chart-column"></i></span>
+            <span>Executive Overview</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="admin-leads.html">
+            <span><i class="fa-solid fa-ticket"></i></span>
+            <span>Lead & Token Queue</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="admin-inventory.html">
+            <span><i class="fa-solid fa-building"></i></span>
+            <span>Inventory & Roster</span>
+          </a>
+        </li>
+        <li class="sidebar-item active">
+          <a href="admin-occupancy.html">
+            <span><i class="fa-solid fa-arrow-trend-up"></i></span>
+            <span>Occupancy & Wards</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="admin-telemetry.html">
+            <span><i class="fa-solid fa-brain"></i></span>
+            <span>Risk Telemetry</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="admin-legal.html">
+            <span><i class="fa-solid fa-file-contract"></i></span>
+            <span>Diagnostic & Title Lab</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="admin-revenue.html">
+            <span><i class="fa-solid fa-credit-card"></i></span>
+            <span>Revenue & TPA Claims</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Bottom Profile -->
+      <div class="sidebar-footer">
+        <div class="user-profile-badge">
+          <div class="avatar-initials">MA</div>
+          <div class="user-info-text">
+            <div class="user-name-line">Manu</div>
+            <div class="user-email-line">Chief Operations Director</div>
+          </div>
+        </div>
+        <button class="btn-logout-sidebar btn-logout-action">
+          <span><i class="fa-solid fa-arrow-right"></i></span> LOGOUT ADMIN
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN VIEWPORT -->
+    <div style="flex: 1; display: flex; flex-direction: column;">
+      <!-- Mobile Bar -->
+      <div class="mobile-dash-header">
+        <a href="admin-dashboard.html" class="stackly-brand">
+          <img src="assets/images/stackly-logo-light.png" alt="Stackly" class="stackly-brand-img" style="height: 32px;">
+        </a>
+        <button id="dashSidebarToggle" style="background:none; color:#ffffff; font-size:1.5rem; cursor:pointer;"><i class="fa-solid fa-bars"></i></button>
+      </div>
+
+      <main class="dashboard-main">
+        <!-- Topbar -->
+        <div class="dashboard-topbar">
+          <div class="dash-heading-wrap">
+            <div class="dash-user-welcome-chip">
+              <i class="fa-solid fa-circle-user"></i>
+              <span>Signed in as: <strong class="current-user-email">manu@gmail.com</strong></span>
+            </div>
+            <h1>Occupancy & Tenant Wards <i class="fa-solid fa-chart-column"></i></h1>
+            <p class="dash-subtext">Commercial leasing telemetry, tenant lock-in management, rental escalation dates, and vacancy minimization.</p>
+            <div class="dash-actions-row" style="margin-top: 1.2rem;">
+              <button class="btn-dash-outline btn-export-census" onclick="window.location='404.html'">Export Census</button>
+            <button class="btn-dash-primary" onclick="window.location='404.html'">
+              <i class="fa-solid fa-plus"></i> CALL NEXT OPD TOKEN
+            </button>
+            </div>
+          </div>
+          <div class="dash-user-profile-badge">
+            <span class="current-user-email">manu@gmail.com</span>
+            <div class="avatar-initials current-user-initials" style="width: 34px; height: 34px;">MA</div>
+          </div>
+        </div>
+
+
+        <!-- Section 1: Commercial Asset Lease Occupancy Overview -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-chart-line"></i></span> Section 1: Commercial Asset Lease Occupancy Overview
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Manage <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Real-time occupancy status across all managed commercial suites and SCO plazas</p>
+          <div class="dash-metrics-grid" style="margin-bottom: 0;">
+            <div class="metric-card-box">
+              <div class="metric-header">TOTAL MANAGED AREA</div>
+              <div class="metric-number">2,45,000 Sq.Ft</div>
+              <div class="metric-sub-detail">Grade-A Commercial</div>
+            </div>
+            <div class="metric-card-box">
+              <div class="metric-header">OCCUPANCY RATE</div>
+              <div class="metric-number">96.4 %</div>
+              <div class="metric-sub-detail">Zero un-leased units in Prime SCO</div>
+            </div>
+            <div class="metric-card-box">
+              <div class="metric-header">WEIGHTED LOCK-IN</div>
+              <div class="metric-number">5.8 Years</div>
+              <div class="metric-sub-detail">Corporate Tenants (HDFC, Cognizant)</div>
+            </div>
+            <div class="metric-card-box">
+              <div class="metric-header">AVERAGE RENT YIELD</div>
+              <div class="metric-number">8.9 %</div>
+              <div class="metric-sub-detail">With 15% 3-year escalation</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Active Tenant Roster & Lock-in Expiry Timeline -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-file-invoice"></i></span> Section 2: Active Tenant Roster & Lock-in Expiry Timeline
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Manage <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Detailed lease contract register with remaining lock-in periods and security deposits</p>
+          <table class="dash-table">
+            <thead><tr><th>Tenant Corporate</th><th>Premises</th><th>Area</th><th>Monthly Net</th><th>Lock-in Ends</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>HDFC Bank Reg. Ops</td><td>CyberEdge SCO 101</td><td>4,200 sq.ft</td><td>₹ 85,000</td><td>Oct 2029</td><td><span class="status-badge verified">Active Lease</span></td></tr>
+              <tr><td>Cognizant Technology</td><td>Pinnacle Sky Suite</td><td>3,100 sq.ft</td><td>₹ 63,000</td><td>Aug 2027</td><td><span class="status-badge verified">Active Lease</span></td></tr>
+              <tr><td>Apollo Pharmacy Regional</td><td>Fairlands Retail Hub</td><td>1,800 sq.ft</td><td>₹ 42,000</td><td>Dec 2031</td><td><span class="status-badge verified">Active Lease</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Section 3: Rental Yield Disbursals & Rent Roll Health -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-money-bill-transfer"></i></span> Section 3: Rental Yield Disbursals & Rent Roll Health
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Manage <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Monthly automated rental distribution to client investor accounts</p>
+          <div style="background:#ffffff; border:1px solid var(--border-light); border-radius:14px; padding:1.2rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <strong style="color:#1a0736;">Current Month Rent Roll Collection: 100% Cleared</strong>
+              <span class="status-badge verified">₹ 21.6 L Disbursed</span>
+            </div>
+            <p style="font-size:0.85rem; color:#645e78;">All corporate tenants processed rent credits via NACH before the 5th of this month with zero defaults.</p>
+          </div>
+        </div>
+
+        <!-- Section 4: Lease Renewal & Escalation Notice Desk -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-calendar-days"></i></span> Section 4: Lease Renewal & Escalation Notice Desk
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Manage <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Automated statutory legal notices for triennial 15% rent escalation triggers</p>
+          <table class="dash-table">
+            <thead><tr><th>Tenant Identity</th><th>Notice Date</th><th>Escalation Factor</th><th>Revised Monthly</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td>HDFC Bank Regional Operations</td><td>15 Jan 2027</td><td>+15% Triennial</td><td>₹ 97,750 / mo</td><td><button class="btn-dash-outline" onclick="window.location='404.html'">Review Notice</button></td></tr>
+              <tr><td>Cognizant Solutions</td><td>01 May 2027</td><td>+15% Triennial</td><td>₹ 72,450 / mo</td><td><button class="btn-dash-outline" onclick="window.location='404.html'">Review Notice</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Section 5: Geographic Ward Concentration & Vacancy Risk Matrix -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-map-pin"></i></span> Section 5: Geographic Ward Concentration & Vacancy Risk Matrix
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Manage <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Risk diversification modeling to prevent regional overexposure in single municipal zones</p>
+          <div style="display:flex; justify-content:space-between; align-items:center; background:#ffffff; border:1px solid var(--border-light); border-radius:12px; padding:1.2rem; flex-wrap:wrap; gap:16px;">
+            <div>
+              <strong style="color:#1a0736; font-size:1.05rem;">Ward Diversification Index: 88.4% (Optimal)</strong>
+              <p style="font-size:0.85rem; color:#645e78; margin-top:4px;">Assets distributed across Salem West (42%), OMR Corridor (36%), and Bangalore Highway Hub (22%).</p>
+            </div>
+            <button class="btn-dash-primary" onclick="window.location='404.html'">View Ward Heatmap</button>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <div id="toastMessage" class="toast-message" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In to Stackly | Real Estate Consultancy Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background: radial-gradient(circle at 50% 25%, #1e0d3b 0%, #0d041a 100%);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2.5rem 1rem;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .auth-modal-card {
+      margin: auto;
+      box-shadow: 0 25px 65px -10px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.15) !important;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- ==========================================
+       PAGE PRELOADER: STACKLY LOGIN
+       ========================================== -->
+  <div id="pagePreloader" class="page-preloader" aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-logo-wrap">
+        <img src="assets/images/stackly-mark.png" alt="Stackly" class="preloader-logo-mark-img">
+        <div class="preloader-pulse-ring"></div>
+      </div>
+      <div class="preloader-brand">
+        <span class="preloader-brand-main">STACKLY</span>
+        <span class="preloader-brand-sub">LOGIN</span>
+      </div>
+      <div class="preloader-bar">
+        <div class="preloader-progress"></div>
+      </div>
+      <div class="preloader-tagline">Investor & Client Authentication Portal</div>
+    </div>
+  </div>
+
+
+  <!-- Sign In Card (Pixel-Perfect to Screenshot 2) -->
+  <div class="auth-modal-card" style="box-shadow: 0 20px 50px rgba(22, 4, 43, 0.15);">
+    <!-- Top Header Strip -->
+    <div class="auth-header-strip">
+      <a href="index.html" class="btn-back-home">
+        <i class="fa-solid fa-arrow-left"></i> Back to Home
+      </a>
+      <span class="portal-tag">
+        <i class="fa-solid fa-globe"></i> Telemetry Portal
+      </span>
+    </div>
+
+    <!-- Telemetry Chart Banner -->
+    <div class="auth-banner-wrap">
+      <img src="assets/images/login-login-chart-banner-4.webp" alt="Live Patient Care & Health Telemetry Engine" class="auth-banner-img" width="720" height="240">
+    </div>
+
+    <!-- Form Content -->
+    <div class="auth-card-body">
+      <!-- Stackly Brand Logo -->
+      <a href="index.html" class="stackly-brand">
+        <img src="assets/images/stackly-mark.png" alt="Stackly" class="stackly-brand-img" style="height:36px;width:auto;"><span class="stackly-brand-name" style="font-family:var(--font-heading);font-size:1.4rem;font-weight:900;color:#1a0736;letter-spacing:0.5px;">Stackly</span>
+      </a>
+
+      <h1 class="auth-title">Sign In to Stackly</h1>
+      <p class="auth-subtitle">Select your role to sign in</p>
+
+      <!-- Role Selector (User vs Admin) -->
+      <div class="role-tabs">
+        <button type="button" class="role-tab-btn active" data-role="user" id="roleUserBtn">
+          <i class="fa-solid fa-user"></i> User
+        </button>
+        <button type="button" class="role-tab-btn" data-role="admin" id="roleAdminBtn">
+          <i class="fa-solid fa-shield-halved"></i> Admin
+        </button>
+      </div>
+
+      <form id="standaloneLoginForm">
+        <div class="form-group">
+          <label class="form-label">Email or Staff ID *</label>
+          <input type="text" class="form-input auth-email-input" id="loginEmail" placeholder="name@example.com or Staff ID" required>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">
+            <span>Password *</span>
+            <a href="404.html">Forgot password?</a>
+          </div>
+          <input type="password" class="form-input" id="loginPass" placeholder="Enter your password" required>
+        </div>
+
+        <div class="form-extras">
+          <label class="remember-label">
+            <input type="checkbox">
+            <span>Remember this device</span>
+          </label>
+          <span class="ssl-badge"><i class="fa-solid fa-lock"></i> 256-Bit SSL</span>
+        </div>
+
+        <button type="submit" class="btn-auth-submit" id="signInSubmitBtn">
+          <i class="fa-solid fa-arrow-right"></i> Sign In
+        </button>
+      </form>
+
+      <div class="auth-footer-prompt">
+        Don't have an account yet? <a href="signup.html">Register Organization or User</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // Handle standalone login redirect
+    document.getElementById('standaloneLoginForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const role = document.querySelector('.role-tab-btn.active').getAttribute('data-role');
+      const emailInput = document.getElementById('loginEmail');
+      const emailVal = emailInput && emailInput.value.trim() ? emailInput.value.trim() : 'manu@gmail.com';
+      localStorage.setItem('stackly_user_email', emailVal);
+      showToast(`Signing in as ${role.toUpperCase()} (${emailVal})...`);
+      setTimeout(() => {
+        if (role === 'admin') {
+          window.location.href = 'admin-dashboard.html';
+        } else {
+          window.location.href = 'user-dashboard.html';
+        }
+      }, 500);
+    });
+  </script>
+</body>
+</html>
+
+
+
