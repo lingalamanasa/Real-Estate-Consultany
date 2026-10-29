@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advisory Consultations | Stackly Property Investor</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- ==========================================
+       PAGE PRELOADER: STACKLY INVESTOR PORTAL
+       ========================================== -->
+  <div id="pagePreloader" class="page-preloader" aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-logo-wrap">
+        <img src="assets/images/stackly-mark.png" alt="Stackly" class="preloader-logo-mark-img">
+        <div class="preloader-pulse-ring"></div>
+      </div>
+      <div class="preloader-brand">
+        <span class="preloader-brand-main">STACKLY</span>
+        <span class="preloader-brand-sub">INVESTOR PORTAL</span>
+      </div>
+      <div class="preloader-bar">
+        <div class="preloader-progress"></div>
+      </div>
+      <div class="preloader-tagline">Advisory Consultations</div>
+    </div>
+  </div>
+
+  <div class="dashboard-layout">
+    <!-- LEFT SIDEBAR -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <a href="user-dashboard.html" class="stackly-brand">
+          <img src="assets/images/stackly-mark.png" alt="Stackly" class="stackly-brand-img" style="height:36px;width:auto;filter:brightness(0) invert(1);"><span class="stackly-brand-name" style="font-family:var(--font-heading);font-size:1.4rem;font-weight:900;color:#ffffff;letter-spacing:0.5px;">Stackly</span>
+        </a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-item">
+          <a href="user-dashboard.html">
+            <span><i class="fa-solid fa-house"></i></span>
+            <span>My Property Dashboard</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="user-telemetry.html">
+            <span><i class="fa-solid fa-chart-line"></i></span>
+            <span>Portfolio & Yield Telemetry</span>
+          </a>
+        </li>
+        <li class="sidebar-item active">
+          <a href="user-consultations.html">
+            <span><i class="fa-solid fa-calendar-check"></i></span>
+            <span>Advisory Consultations</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="user-reports.html">
+            <span><i class="fa-solid fa-file-shield"></i></span>
+            <span>Title Audits & RERA Reports</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="user-pipeline.html">
+            <span><i class="fa-solid fa-network-wired"></i></span>
+            <span>Acquisition Pipeline</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="user-escrow.html">
+            <span><i class="fa-solid fa-briefcase"></i></span>
+            <span>Escrow & Payment Schedules</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="user-vault.html">
+            <span><i class="fa-solid fa-credit-card"></i></span>
+            <span>Mortgage & Document Vault</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Bottom Profile -->
+      <div class="sidebar-footer">
+        <div class="user-profile-badge">
+          <div class="avatar-initials">MA</div>
+          <div class="user-info-text">
+            <div class="user-name-line">Manu</div>
+            <div class="user-email-line">manu@gmail.com</div>
+          </div>
+        </div>
+        <button class="btn-logout-sidebar btn-logout-action">
+          <span><i class="fa-solid fa-arrow-right"></i></span> LOGOUT
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN VIEWPORT -->
+    <div style="flex: 1; display: flex; flex-direction: column;">
+      <!-- Mobile Bar -->
+      <div class="mobile-dash-header">
+        <a href="user-dashboard.html" class="stackly-brand">
+          <img src="assets/images/stackly-logo-light.png" alt="Stackly" class="stackly-brand-img" style="height: 32px;">
+        </a>
+        <button id="dashSidebarToggle" style="background:none; color:#ffffff; font-size:1.5rem; cursor:pointer;"><i class="fa-solid fa-bars"></i></button>
+      </div>
+
+      <main class="dashboard-main">
+        <!-- Topbar -->
+        <div class="dashboard-topbar">
+          <div class="dash-heading-wrap">
+            <div class="dash-user-welcome-chip">
+              <i class="fa-solid fa-circle-user"></i>
+              <span>Signed in as: <strong class="current-user-email">manu@gmail.com</strong></span>
+            </div>
+            <h1>Advisory Consultations</h1>
+            <p class="dash-subtext">Book and manage one-on-one sessions with senior legal counsel, property valuers, and tax strategists.</p>
+            <div class="dash-actions-row" style="margin-top: 1.2rem;">
+              <button class="btn-dash-primary" onclick="window.location='404.html'">
+              <i class="fa-solid fa-plus"></i> BOOK NEW CONSULT
+            </button>
+            </div>
+          </div>
+          <div class="dash-user-profile-badge">
+            <span class="current-user-email">manu@gmail.com</span>
+            <div class="avatar-initials current-user-initials" style="width: 34px; height: 34px;">MA</div>
+          </div>
+        </div>
+
+        <!-- 4 Top Quick Cards -->
+        <div class="category-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-bottom: 1.5rem;">
+          <div class="category-card" style="text-align: center; background: #ffffff; padding: 1.2rem; border-radius: 14px; border: 1px solid var(--border-light);">
+            <div style="font-size: 1.6rem; color: var(--gold-primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-gavel"></i></div>
+            <strong style="display: block; font-size: 0.95rem; color: #1a0736;">Consult Advisor</strong>
+            <span style="font-size: 0.75rem; color: #645e78;">Dr. Shilpi Singh (Senior Counsel)</span>
+          </div>
+          <div class="category-card" style="text-align: center; background: #ffffff; padding: 1.2rem; border-radius: 14px; border: 1px solid var(--border-light);">
+            <div style="font-size: 1.6rem; color: var(--gold-primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-chart-simple"></i></div>
+            <strong style="display: block; font-size: 0.95rem; color: #1a0736;">Portfolio Tracker</strong>
+            <span style="font-size: 0.75rem; color: #645e78;">3 Assets Active • Phase 2 Handover</span>
+          </div>
+          <div class="category-card" style="text-align: center; background: #ffffff; padding: 1.2rem; border-radius: 14px; border: 1px solid var(--border-light);">
+            <div style="font-size: 1.6rem; color: var(--gold-primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-file-pdf"></i></div>
+            <strong style="display: block; font-size: 0.95rem; color: #1a0736;">Download Title Audit</strong>
+            <span style="font-size: 0.75rem; color: #645e78;">Fairlands Villa Legal Clearance PDF</span>
+          </div>
+          <div class="category-card" style="text-align: center; background: #ffffff; padding: 1.2rem; border-radius: 14px; border: 1px solid var(--border-light);">
+            <div style="font-size: 1.6rem; color: var(--gold-primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-credit-card"></i></div>
+            <strong style="display: block; font-size: 0.95rem; color: #1a0736;">Escrow Reminders</strong>
+            <span style="font-size: 0.75rem; color: #645e78;">Milestone Slab 3 • HDFC Disbursal</span>
+          </div>
+        </div>
+
+
+        <!-- Section 1: Active Advisory Chamber Schedule & Upcoming Consultations -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-calendar-check"></i></span> Section 1: Active Advisory Chamber Schedule & Upcoming Consultations
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Details <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Real-time booking schedule with assigned Senior High Court Counsel</p>
+          <div style="background:#ffffff; border:1px solid var(--border-light); border-radius:14px; padding:1.4rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+            <div style="display:flex; gap:16px; align-items:center;">
+              <img src="assets/images/user-dash-advisor-dr-shilpi-3.webp" alt="Dr. Shilpi Singh" style="width:68px; height:68px; border-radius:50%; border:2px solid var(--gold-primary); object-fit:cover;">
+              <div>
+                <span class="status-badge active" style="margin-bottom:6px; display:inline-block;">Tomorrow • 10:30 AM IST</span>
+                <h3 style="color:#1a0736; font-size:1.15rem; margin:2px 0;">Portfolio Rebalancing & RERA Title Audit Session</h3>
+                <p style="font-size:0.85rem; color:#645e78;">With Dr. Shilpi Singh (Senior Legal Counsel & High Court Bar Member)</p>
+              </div>
+            </div>
+            <div style="display:flex; gap:10px;">
+              <button class="btn-dash-primary" onclick="window.location='404.html'"><i class="fa-solid fa-video"></i> Join Chamber</button>
+              <button class="btn-dash-outline" onclick="window.location='404.html'">Reschedule</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Dedicated Advisory Panel & Retained Counsel -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-users-gear"></i></span> Section 2: Dedicated Advisory Panel & Retained Counsel
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Details <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Your assigned multi-disciplinary board of property attorneys, valuers, and escrows</p>
+          <div class="category-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+            <div class="category-card" style="text-align:left; background:#ffffff; padding:1.2rem;">
+              <img src="assets/images/admin-dash-advisor-dr-shilpi-2.webp" alt="Dr. Shilpi Singh" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-bottom:8px;">
+              <h4 style="color:#1a0736; margin-bottom:4px;">Dr. Shilpi Singh</h4>
+              <div style="font-size:0.8rem; color:#7e68ad; font-weight:700; margin-bottom:8px;">Senior Title & Litigation Counsel</div>
+              <p style="font-size:0.8rem; color:#645e78;">Specialist in 40-year parent deed audits and dispute-free acquisitions.</p>
+              <button class="btn-dash-outline" style="width:100%; margin-top:10px; font-size:0.8rem;" onclick="window.location='404.html'">Book 30m Session</button>
+            </div>
+            <div class="category-card" style="text-align:left; background:#ffffff; padding:1.2rem;">
+              <img src="assets/images/admin-dash-advisor-ananya-sen-2.webp" alt="Dr. Ananya Sen" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-bottom:8px;">
+              <h4 style="color:#1a0736; margin-bottom:4px;">Dr. Ananya Sen</h4>
+              <div style="font-size:0.8rem; color:#7e68ad; font-weight:700; margin-bottom:8px;">Pre-Leased Commercial & SCO</div>
+              <p style="font-size:0.8rem; color:#645e78;">Institutional leasing contracts, tenant vetting, and yield escalation.</p>
+              <button class="btn-dash-outline" style="width:100%; margin-top:10px; font-size:0.8rem;" onclick="window.location='404.html'">Book 30m Session</button>
+            </div>
+            <div class="category-card" style="text-align:left; background:#ffffff; padding:1.2rem;">
+              <img src="assets/images/admin-dash-advisor-meera-nair-2.webp" alt="Meera Nair" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-bottom:8px;">
+              <h4 style="color:#1a0736; margin-bottom:4px;">Meera Nair</h4>
+              <div style="font-size:0.8rem; color:#7e68ad; font-weight:700; margin-bottom:8px;">Municipal Planning & RERA</div>
+              <p style="font-size:0.8rem; color:#645e78;">Master plan zoning, building sanctions, and environmental clearance.</p>
+              <button class="btn-dash-outline" style="width:100%; margin-top:10px; font-size:0.8rem;" onclick="window.location='404.html'">Book 30m Session</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Past Consultation Minutes & Legal Advice Dossiers -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-clipboard-list"></i></span> Section 3: Past Consultation Minutes & Legal Advice Dossiers
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Details <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Formal written advisory reports issued at the conclusion of each consultation</p>
+          <table class="dash-table">
+            <thead><tr><th>Session Date</th><th>Topic Discussed</th><th>Advisor</th><th>Outcome Summary</th><th>Dossier</th></tr></thead>
+            <tbody>
+              <tr><td>18 Oct 2026</td><td>Fairlands Villa Final Plinth Inspection</td><td>Dr. Shilpi Singh</td><td>Approved for Milestone 2 disbursal</td><td><button class="btn-dash-outline" style="padding:0.3rem 0.6rem;" onclick="window.location='404.html'">Download Minutes</button></td></tr>
+              <tr><td>04 Oct 2026</td><td>CyberEdge SCO 9-Year Lease Review</td><td>Dr. Ananya Sen</td><td>Escalation clause locked at 15% every 3 yrs</td><td><button class="btn-dash-outline" style="padding:0.3rem 0.6rem;" onclick="window.location='404.html'">Download Minutes</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Section 4: Direct Inquiry & Priority Advisory Ticket Submission -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-pen-to-square"></i></span> Section 4: Direct Inquiry & Priority Advisory Ticket Submission
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Details <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Submit a direct query to the legal and investment desk with guaranteed 2-hour SLA response</p>
+          <div style="background:#ffffff; border:1px solid var(--border-light); border-radius:14px; padding:1.2rem;">
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:12px;">
+              <div>
+                <label style="font-size:0.8rem; font-weight:700; color:#1a0736;">Inquiry Subject</label>
+                <input type="text" value="Fairlands Mutation & Revenue Patta Transfer" style="width:100%; padding:0.6rem 0.8rem; border:1px solid var(--border-light); border-radius:8px; margin-top:4px;">
+              </div>
+              <div>
+                <label style="font-size:0.8rem; font-weight:700; color:#1a0736;">Priority Category</label>
+                <select style="width:100%; padding:0.6rem 0.8rem; border:1px solid var(--border-light); border-radius:8px; margin-top:4px;">
+                  <option>Urgent Legal Vetting (&lt; 2h SLA)</option>
+                  <option>Financial Yield Modeling</option>
+                  <option>Escrow Disbursal Query</option>
+                </select>
+              </div>
+            </div>
+            <button class="btn-dash-primary" onclick="window.location='404.html'">Submit Inquiry Ticket</button>
+          </div>
+        </div>
+
+        <!-- Section 5: Retainer Membership & Emergency Legal Hotline -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-award"></i></span> Section 5: Retainer Membership & Emergency Legal Hotline
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Details <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">24/7 dedicated telephone hotline for immediate asset intervention or police/revenue queries</p>
+          <div style="background:linear-gradient(135deg, #1a0736, #2d0d59); color:#ffffff; border-radius:14px; padding:1.4rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+            <div>
+              <span class="status-badge active" style="background:#10b981; color:#ffffff;">Direct Retainer Active</span>
+              <h3 style="color:#ffffff; margin:6px 0 2px 0;">Dedicated Legal Advisory Desk</h3>
+              <p style="color:#cfc8e2; font-size:0.85rem;">Private direct extension: +91 94432 00000 • PIN: 8812</p>
+            </div>
+            <button class="btn-dash-primary" style="background:#F59E0B; color:#1a0736; font-weight:800;" onclick="window.location='404.html'"><i class="fa-solid fa-phone"></i> Call Hotline</button>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <div id="toastMessage" class="toast-message" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+

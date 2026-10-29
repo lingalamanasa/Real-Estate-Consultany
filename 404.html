@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Stackly Real Estate Consultancy</title>
+  <meta name="description" content="The page or real estate advisory dossier you requested could not be found on Stackly.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* ── 404 Page Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #f8f7ff;
+      overflow-x: hidden;
+    }
+
+    /* ── SVG Line Canvas ── */
+    #gsap-lines {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Main Content ── */
+    .page-404-main {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+
+    .page-404-inner {
+      max-width: 720px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* Error tag */
+    .err-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #6d5bd0;
+      background: rgba(109,91,208,0.10);
+      border: 1px solid rgba(109,91,208,0.18);
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 1.6rem;
+      opacity: 0;
+    }
+
+    /* 404 Big Number */
+    .err-number {
+      font-family: var(--font-heading, 'Inter', sans-serif);
+      font-size: clamp(6rem, 15vw, 11rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -4px;
+      background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+      opacity: 0;
+    }
+
+    /* Divider line */
+    .err-divider {
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #4f46e5, #06b6d4);
+      border-radius: 4px;
+      margin: 0 auto 1.8rem;
+    }
+
+    /* Heading */
+    .err-heading {
+      font-family: var(--font-heading, 'Inter', sans-serif);
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-weight: 800;
+      color: #16042b;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+      opacity: 0;
+    }
+
+    /* Paragraph */
+    .err-desc {
+      font-size: 1rem;
+      color: #5e5873;
+      max-width: 540px;
+      line-height: 1.65;
+      margin-bottom: 2.4rem;
+      opacity: 0;
+    }
+
+    /* Buttons */
+    .err-btns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      opacity: 0;
+    }
+
+    .err-btns .btn-dash-primary {
+      padding: 0.9rem 2.2rem;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .err-btns .btn-dash-outline {
+      padding: 0.85rem 2rem;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ── Floating animated dots ── */
+    .dot {
+      position: fixed;
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE PRELOADER -->
+  <div id="pagePreloader" class="page-preloader" aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-logo-wrap">
+        <img src="assets/images/stackly-mark.png" alt="Stackly" class="preloader-logo-mark-img">
+        <div class="preloader-pulse-ring"></div>
+      </div>
+      <div class="preloader-brand">
+        <span class="preloader-brand-main">STACKLY</span>
+      </div>
+      <div class="preloader-bar">
+        <div class="preloader-progress"></div>
+      </div>
+      <div class="preloader-tagline">Real Estate Advisory &amp; PropTech Platform</div>
+    </div>
+  </div>
+
+  <!-- GSAP SVG Lines Background -->
+  <svg id="gsap-lines" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- Lines drawn by GSAP -->
+    <line class="anim-line" x1="0" y1="30%" x2="100%" y2="30%" stroke="rgba(79,70,229,0.12)" stroke-width="1"/>
+    <line class="anim-line" x1="0" y1="60%" x2="100%" y2="60%" stroke="rgba(6,182,212,0.10)" stroke-width="1"/>
+    <line class="anim-line" x1="0" y1="80%" x2="100%" y2="80%" stroke="rgba(79,70,229,0.07)" stroke-width="1"/>
+    <line class="anim-line" x1="25%" y1="0" x2="25%" y2="100%" stroke="rgba(6,182,212,0.08)" stroke-width="1"/>
+    <line class="anim-line" x1="75%" y1="0" x2="75%" y2="100%" stroke="rgba(79,70,229,0.08)" stroke-width="1"/>
+    <line class="anim-line" x1="50%" y1="0" x2="50%" y2="100%" stroke="rgba(109,91,208,0.05)" stroke-width="1"/>
+    <!-- Diagonal lines -->
+    <line class="anim-line" x1="0" y1="0" x2="40%" y2="100%" stroke="rgba(79,70,229,0.06)" stroke-width="1"/>
+    <line class="anim-line" x1="100%" y1="0" x2="60%" y2="100%" stroke="rgba(6,182,212,0.06)" stroke-width="1"/>
+    <!-- Corner accent lines -->
+    <line class="anim-line" x1="0" y1="0" x2="15%" y2="0"   stroke="rgba(79,70,229,0.25)" stroke-width="2"/>
+    <line class="anim-line" x1="0" y1="0" x2="0"   y2="15%" stroke="rgba(79,70,229,0.25)" stroke-width="2"/>
+    <line class="anim-line" x1="100%" y1="0" x2="85%" y2="0"   stroke="rgba(6,182,212,0.25)" stroke-width="2"/>
+    <line class="anim-line" x1="100%" y1="0" x2="100%" y2="15%" stroke="rgba(6,182,212,0.25)" stroke-width="2"/>
+    <line class="anim-line" x1="0"    y1="100%" x2="15%"  y2="100%" stroke="rgba(109,91,208,0.25)" stroke-width="2"/>
+    <line class="anim-line" x1="0"    y1="100%" x2="0"    y2="85%"  stroke="rgba(109,91,208,0.25)" stroke-width="2"/>
+    <line class="anim-line" x1="100%" y1="100%" x2="85%"  y2="100%" stroke="rgba(6,182,212,0.20)" stroke-width="2"/>
+    <line class="anim-line" x1="100%" y1="100%" x2="100%" y2="85%"  stroke="rgba(6,182,212,0.20)" stroke-width="2"/>
+  </svg>
+
+  <!-- Floating dots -->
+  <div class="dot" id="d1" style="width:10px;height:10px;background:#4f46e5;top:18%;left:12%;"></div>
+  <div class="dot" id="d2" style="width:7px;height:7px;background:#06b6d4;top:70%;left:85%;"></div>
+  <div class="dot" id="d3" style="width:6px;height:6px;background:#6d5bd0;top:55%;left:8%;"></div>
+  <div class="dot" id="d4" style="width:8px;height:8px;background:#4f46e5;top:30%;left:88%;"></div>
+  <div class="dot" id="d5" style="width:5px;height:5px;background:#06b6d4;top:85%;left:40%;"></div>
+
+  <!-- 404 MAIN BODY -->
+  <main class="page-404-main">
+    <div class="page-404-inner">
+
+      <span class="err-tag" id="errTag">
+        <i class="fa-solid fa-triangle-exclamation"></i> Error 404 &bull; Resource Relocated
+      </span>
+
+      <div class="err-number" id="errNum">404</div>
+
+      <div class="err-divider" id="errDiv"></div>
+
+      <h1 class="err-heading" id="errHead">
+        The Real Estate Telemetry or Page You Are Looking For Does Not Exist
+      </h1>
+
+      <p class="err-desc" id="errDesc">
+        The requested RERA due diligence dossier, property listing, or corridor index is currently undergoing algorithmic recalculation or has been permanently migrated to another partition.
+      </p>
+
+      <div class="err-btns" id="errBtns">
+        <a href="index.html" class="btn-dash-primary">
+          <i class="fa-solid fa-house"></i> Back to Home
+        </a>
+        <a href="javascript:history.back()" class="btn-dash-outline">
+          <i class="fa-solid fa-arrow-left"></i> Go Back
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <script>
+    // ── GSAP Line Draw Animation ──────────────────────────────────────────
+    const lines = document.querySelectorAll('.anim-line');
+
+    lines.forEach((line, i) => {
+      const length = Math.hypot(
+        (parseFloat(line.getAttribute('x2')) || 0) - (parseFloat(line.getAttribute('x1')) || 0),
+        (parseFloat(line.getAttribute('y2')) || 0) - (parseFloat(line.getAttribute('y1')) || 0)
+      ) || 2000;
+
+      gsap.set(line, {
+        strokeDasharray: length,
+        strokeDashoffset: length
+      });
+
+      gsap.to(line, {
+        strokeDashoffset: 0,
+        duration: 1.4 + i * 0.12,
+        ease: 'power2.out',
+        delay: 0.2 + i * 0.08
+      });
+    });
+
+    // ── Floating Dots ─────────────────────────────────────────────────────
+    const dots = ['d1','d2','d3','d4','d5'];
+    dots.forEach((id, i) => {
+      const el = document.getElementById(id);
+      gsap.to(el, { opacity: 0.7, duration: 0.6, delay: 0.5 + i * 0.15 });
+      gsap.to(el, {
+        y: -18,
+        duration: 2.2 + i * 0.3,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+        delay: i * 0.4
+      });
+    });
+
+    // ── Content Entrance Animations ───────────────────────────────────────
+    const tl = gsap.timeline({ delay: 0.4 });
+
+    tl.to('#errTag',  { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.3)
+      .from('#errTag', { y: -20 }, '<')
+
+      .to('#errNum',  { opacity: 1, duration: 0.7, ease: 'power3.out' }, 0.55)
+      .from('#errNum', { scale: 0.7, y: 30 }, '<')
+
+      .to('#errDiv',  { width: '80px', duration: 0.5, ease: 'power2.out' }, 0.9)
+
+      .to('#errHead', { opacity: 1, duration: 0.6, ease: 'power3.out' }, 1.0)
+      .from('#errHead', { y: 24 }, '<')
+
+      .to('#errDesc', { opacity: 1, duration: 0.6, ease: 'power3.out' }, 1.2)
+      .from('#errDesc', { y: 20 }, '<')
+
+      .to('#errBtns', { opacity: 1, duration: 0.6, ease: 'power3.out' }, 1.4)
+      .from('#errBtns', { y: 20, scale: 0.96 }, '<');
+  </script>
+
+  <script src="app.js"></script>
+</body>
+</html>

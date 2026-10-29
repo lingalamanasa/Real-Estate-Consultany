@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Your Account | Stackly Real Estate Consultancy</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background: radial-gradient(circle at 50% 25%, #1e0d3b 0%, #0d041a 100%);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2.5rem 1rem;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .auth-modal-card {
+      margin: auto;
+      box-shadow: 0 25px 65px -10px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.15) !important;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- ==========================================
+       PAGE PRELOADER: STACKLY SIGNUP
+       ========================================== -->
+  <div id="pagePreloader" class="page-preloader" aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-logo-wrap">
+        <img src="assets/images/stackly-mark.png" alt="Stackly" class="preloader-logo-mark-img">
+        <div class="preloader-pulse-ring"></div>
+      </div>
+      <div class="preloader-brand">
+        <span class="preloader-brand-main">STACKLY</span>
+        <span class="preloader-brand-sub">SIGNUP</span>
+      </div>
+      <div class="preloader-bar">
+        <div class="preloader-progress"></div>
+      </div>
+      <div class="preloader-tagline">Client Onboarding & Telemetry Registration</div>
+    </div>
+  </div>
+
+
+  <!-- Sign Up Card (Pixel-Perfect to Screenshot 3) -->
+  <div class="auth-modal-card" style="box-shadow: 0 20px 50px rgba(22, 4, 43, 0.15);">
+    <!-- Header Strip -->
+    <div class="auth-header-strip">
+      <a href="index.html" class="btn-back-home">
+        <i class="fa-solid fa-arrow-left"></i> Back to Home
+      </a>
+      <span class="portal-tag">
+        <i class="fa-solid fa-globe"></i> Telemetry Portal
+      </span>
+    </div>
+
+    <!-- Banner -->
+    <div class="auth-banner-wrap">
+      <img src="assets/images/signup-login-chart-banner-5.webp" alt="Enterprise Clinical Analytics Infrastructure" class="auth-banner-img" width="720" height="240">
+    </div>
+
+    <!-- Card Body -->
+    <div class="auth-card-body">
+      <!-- Stackly Brand Logo -->
+      <a href="index.html" class="stackly-brand">
+        <img src="assets/images/stackly-mark.png" alt="Stackly" class="stackly-brand-img" style="height:36px;width:auto;"><span class="stackly-brand-name" style="font-family:var(--font-heading);font-size:1.4rem;font-weight:900;color:#1a0736;letter-spacing:0.5px;">Stackly</span>
+      </a>
+
+      <h1 class="auth-title">Create Your Account</h1>
+      <p class="auth-subtitle">Join 2,800+ property investors & advisors operating on Stackly Realty Cloud</p>
+
+      <!-- Role Selector -->
+      <div class="role-tabs">
+        <button type="button" class="role-tab-btn active" data-role="user">
+          <i class="fa-solid fa-user"></i> User
+        </button>
+        <button type="button" class="role-tab-btn" data-role="admin">
+          <i class="fa-solid fa-shield-halved"></i> Admin
+        </button>
+      </div>
+
+      <form id="standaloneSignupForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name *</label>
+            <input type="text" class="form-input" placeholder="First Name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name *</label>
+            <input type="text" class="form-input" placeholder="Last Name" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Work / Personal Email *</label>
+          <input type="email" class="form-input" placeholder="name@example.com" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Password *</label>
+            <input type="password" class="form-input" placeholder="Create a password" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Confirm Password *</label>
+            <input type="password" class="form-input" placeholder="Confirm your passw" required>
+          </div>
+        </div>
+
+        <div class="form-group" style="text-align: left; margin: 0.45rem 0;">
+          <label style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.76rem; color: #6b7280; cursor: pointer;">
+            <input type="checkbox" required style="margin-top: 3px;">
+            <span>I agree to Stackly's <strong>Terms of Service</strong>, <strong>SOC2 Security Agreement</strong>, and <strong>Privacy Policy</strong>.</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn-auth-submit">
+          <i class="fa-solid fa-arrow-right"></i> Create Account
+        </button>
+      </form>
+
+      <div class="auth-footer-prompt">
+        Already have an account? <a href="login.html">Sign In here</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    document.getElementById('standaloneSignupForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const role = document.querySelector('.role-tab-btn.active').getAttribute('data-role');
+      const emailInput = document.querySelector('input[type="email"]');
+      const emailVal = emailInput && emailInput.value.trim() ? emailInput.value.trim() : 'manu@gmail.com';
+      localStorage.setItem('stackly_user_email', emailVal);
+      showToast(`Account registered as ${role.toUpperCase()}! Directing to dashboard...`);
+      setTimeout(() => {
+        if (role === 'admin') {
+          window.location.href = 'admin-dashboard.html';
+        } else {
+          window.location.href = 'user-dashboard.html';
+        }
+      }, 500);
+    });
+  </script>
+</body>
+</html>
+
+

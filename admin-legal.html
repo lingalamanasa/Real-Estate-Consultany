@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnostic & Title Lab | Stackly Admin Cockpit</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- ==========================================
+       PAGE PRELOADER: STACKLY ADMIN COCKPIT
+       ========================================== -->
+  <div id="pagePreloader" class="page-preloader" aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-logo-wrap">
+        <img src="assets/images/stackly-mark.png" alt="Stackly" class="preloader-logo-mark-img">
+        <div class="preloader-pulse-ring"></div>
+      </div>
+      <div class="preloader-brand">
+        <span class="preloader-brand-main">STACKLY</span>
+        <span class="preloader-brand-sub">ADMIN COCKPIT</span>
+      </div>
+      <div class="preloader-bar">
+        <div class="preloader-progress"></div>
+      </div>
+      <div class="preloader-tagline">Diagnostic & Title Lab</div>
+    </div>
+  </div>
+
+  <div class="dashboard-layout">
+    <!-- LEFT SIDEBAR -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <a href="admin-dashboard.html" class="stackly-brand">
+          <img src="assets/images/stackly-mark.png" alt="Stackly" class="stackly-brand-img" style="height:36px;width:auto;filter:brightness(0) invert(1);"><span class="stackly-brand-name" style="font-family:var(--font-heading);font-size:1.4rem;font-weight:900;color:#ffffff;letter-spacing:0.5px;">Stackly</span>
+        </a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-item">
+          <a href="admin-dashboard.html">
+            <span><i class="fa-solid fa-chart-column"></i></span>
+            <span>Executive Overview</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="admin-leads.html">
+            <span><i class="fa-solid fa-ticket"></i></span>
+            <span>Lead & Token Queue</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="admin-inventory.html">
+            <span><i class="fa-solid fa-building"></i></span>
+            <span>Inventory & Roster</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="admin-occupancy.html">
+            <span><i class="fa-solid fa-arrow-trend-up"></i></span>
+            <span>Occupancy & Wards</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="admin-telemetry.html">
+            <span><i class="fa-solid fa-brain"></i></span>
+            <span>Risk Telemetry</span>
+          </a>
+        </li>
+        <li class="sidebar-item active">
+          <a href="admin-legal.html">
+            <span><i class="fa-solid fa-file-contract"></i></span>
+            <span>Diagnostic & Title Lab</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="admin-revenue.html">
+            <span><i class="fa-solid fa-credit-card"></i></span>
+            <span>Revenue & TPA Claims</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Bottom Profile -->
+      <div class="sidebar-footer">
+        <div class="user-profile-badge">
+          <div class="avatar-initials">MA</div>
+          <div class="user-info-text">
+            <div class="user-name-line">Manu</div>
+            <div class="user-email-line">Chief Operations Director</div>
+          </div>
+        </div>
+        <button class="btn-logout-sidebar btn-logout-action">
+          <span><i class="fa-solid fa-arrow-right"></i></span> LOGOUT ADMIN
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN VIEWPORT -->
+    <div style="flex: 1; display: flex; flex-direction: column;">
+      <!-- Mobile Bar -->
+      <div class="mobile-dash-header">
+        <a href="admin-dashboard.html" class="stackly-brand">
+          <img src="assets/images/stackly-logo-light.png" alt="Stackly" class="stackly-brand-img" style="height: 32px;">
+        </a>
+        <button id="dashSidebarToggle" style="background:none; color:#ffffff; font-size:1.5rem; cursor:pointer;"><i class="fa-solid fa-bars"></i></button>
+      </div>
+
+      <main class="dashboard-main">
+        <!-- Topbar -->
+        <div class="dashboard-topbar">
+          <div class="dash-heading-wrap">
+            <div class="dash-user-welcome-chip">
+              <i class="fa-solid fa-circle-user"></i>
+              <span>Signed in as: <strong class="current-user-email">manu@gmail.com</strong></span>
+            </div>
+            <h1>Diagnostic & Title Lab <i class="fa-solid fa-chart-column"></i></h1>
+            <p class="dash-subtext">High Court advocate workbench, 40-year title searches, e-Courts litigation lookups, and LCC certificate issuance.</p>
+            <div class="dash-actions-row" style="margin-top: 1.2rem;">
+              <button class="btn-dash-outline btn-export-census" onclick="window.location='404.html'">Export Census</button>
+            <button class="btn-dash-primary" onclick="window.location='404.html'">
+              <i class="fa-solid fa-plus"></i> CALL NEXT OPD TOKEN
+            </button>
+            </div>
+          </div>
+          <div class="dash-user-profile-badge">
+            <span class="current-user-email">manu@gmail.com</span>
+            <div class="avatar-initials current-user-initials" style="width: 34px; height: 34px;">MA</div>
+          </div>
+        </div>
+
+
+        <!-- Section 1: 40-Year Title Search & Diagnostic Lab Workstation -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-file-contract"></i></span> Section 1: 40-Year Title Search & Diagnostic Lab Workstation
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Manage <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Full advocate workbench for tracing parent deeds and verifying non-encumbrance certificates</p>
+          <div class="dash-metrics-grid" style="margin-bottom: 0;">
+            <div class="metric-card-box">
+              <div class="metric-header">ACTIVE TITLE AUDITS</div>
+              <div class="metric-number">12 Active</div>
+              <div class="metric-sub-detail">Under Senior Advocate review</div>
+            </div>
+            <div class="metric-card-box">
+              <div class="metric-header">AVG SEARCH SPEED</div>
+              <div class="metric-number">&lt; 4 Hours</div>
+              <div class="metric-sub-detail">Automated SRO deed fetching</div>
+            </div>
+            <div class="metric-card-box">
+              <div class="metric-header">CERTIFICATES ISSUED</div>
+              <div class="metric-number">284 LCCs</div>
+              <div class="metric-sub-detail">Zero title disputes reported</div>
+            </div>
+            <div class="metric-card-box">
+              <div class="metric-header">REJECTION RATE</div>
+              <div class="metric-number">18.2 %</div>
+              <div class="metric-sub-detail">Defective titles filtered out</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Active Court Search & Litigation Cross-Checks -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-scale-balanced"></i></span> Section 2: Active Court Search & Litigation Cross-Checks
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Manage <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Automated cross-check against e-Courts database for pending civil disputes or partitions</p>
+          <table class="dash-table">
+            <thead><tr><th>Search Query</th><th>Court Jurisdiction</th><th>Parties Checked</th><th>Filing History</th><th>Clearance</th></tr></thead>
+            <tbody>
+              <tr><td>Fairlands S.F. #142/2B</td><td>Salem District Court & High Court</td><td>Greenfield Estates & Ancestors</td><td>Zero active suits</td><td><span class="status-badge verified">Cleared</span></td></tr>
+              <tr><td>OMR S.F. #98/1A</td><td>Madras High Court (Original Side)</td><td>Skyline Infra & Promoters</td><td>Zero active suits</td><td><span class="status-badge verified">Cleared</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Section 3: RERA Compliance & Escrow Verification Reports -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-stamp"></i></span> Section 3: RERA Compliance & Escrow Verification Reports
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Manage <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Quarterly architect progress validation and statutory escrow deposit compliance</p>
+          <div style="background:#ffffff; border:1px solid var(--border-light); border-radius:14px; padding:1.2rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <strong style="color:#1a0736;">RERA Section 4(2)(l)(D) Escrow Verification</strong>
+              <span class="status-badge verified">100% Compliant</span>
+            </div>
+            <p style="font-size:0.85rem; color:#645e78;">Bank accounts verified with dedicated escrow IFSC codes; withdrawals strictly tied to engineer certification.</p>
+          </div>
+        </div>
+
+        <!-- Section 4: Legal Clearance Certificate (LCC) Issuance Center -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-certificate"></i></span> Section 4: Legal Clearance Certificate (LCC) Issuance Center
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Manage <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Generate and digitally sign binding Stackly Legal Clearance Certificates</p>
+          <div style="background:#ffffff; border:1px solid var(--border-light); border-radius:14px; padding:1.2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+            <div>
+              <strong style="color:#1a0736; font-size:1.05rem;">Issue New Legal Clearance Certificate (LCC)</strong>
+              <p style="font-size:0.85rem; color:#645e78; margin-top:4px;">Applies digital DSC signature of Senior High Court Counsel with 10-year indemnification guarantee.</p>
+            </div>
+            <button class="btn-dash-primary" onclick="window.location='404.html'"><i class="fa-solid fa-plus"></i> Generate LCC Certificate</button>
+          </div>
+        </div>
+
+        <!-- Section 5: High Court Senior Advocate Review Roster -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-user-graduate"></i></span> Section 5: High Court Senior Advocate Review Roster
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Manage <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Empaneled legal luminaries overseeing title diagnostic lab operations</p>
+          <table class="dash-table">
+            <thead><tr><th>Senior Advocate</th><th>Bar Council Ref</th><th>Specialization</th><th>Audits Completed</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td>Dr. Shilpi Singh</td><td>BC-TN/1842/2004</td><td>Civil Title & Partition Laws</td><td>142 Audits</td><td><button class="btn-dash-outline" onclick="window.location='404.html'">View Dossier</button></td></tr>
+              <tr><td>Meera Nair</td><td>BC-TN/2910/2009</td><td>DTCP Sanction & RERA Regulations</td><td>98 Audits</td><td><button class="btn-dash-outline" onclick="window.location='404.html'">View Dossier</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <div id="toastMessage" class="toast-message" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+

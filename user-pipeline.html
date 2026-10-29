@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acquisition Pipeline | Stackly Property Investor</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- ==========================================
+       PAGE PRELOADER: STACKLY INVESTOR PORTAL
+       ========================================== -->
+  <div id="pagePreloader" class="page-preloader" aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-logo-wrap">
+        <img src="assets/images/stackly-mark.png" alt="Stackly" class="preloader-logo-mark-img">
+        <div class="preloader-pulse-ring"></div>
+      </div>
+      <div class="preloader-brand">
+        <span class="preloader-brand-main">STACKLY</span>
+        <span class="preloader-brand-sub">INVESTOR PORTAL</span>
+      </div>
+      <div class="preloader-bar">
+        <div class="preloader-progress"></div>
+      </div>
+      <div class="preloader-tagline">Acquisition Pipeline</div>
+    </div>
+  </div>
+
+  <div class="dashboard-layout">
+    <!-- LEFT SIDEBAR -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <a href="user-dashboard.html" class="stackly-brand">
+          <img src="assets/images/stackly-mark.png" alt="Stackly" class="stackly-brand-img" style="height:36px;width:auto;filter:brightness(0) invert(1);"><span class="stackly-brand-name" style="font-family:var(--font-heading);font-size:1.4rem;font-weight:900;color:#ffffff;letter-spacing:0.5px;">Stackly</span>
+        </a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-item">
+          <a href="user-dashboard.html">
+            <span><i class="fa-solid fa-house"></i></span>
+            <span>My Property Dashboard</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="user-telemetry.html">
+            <span><i class="fa-solid fa-chart-line"></i></span>
+            <span>Portfolio & Yield Telemetry</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="user-consultations.html">
+            <span><i class="fa-solid fa-calendar-check"></i></span>
+            <span>Advisory Consultations</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="user-reports.html">
+            <span><i class="fa-solid fa-file-shield"></i></span>
+            <span>Title Audits & RERA Reports</span>
+          </a>
+        </li>
+        <li class="sidebar-item active">
+          <a href="user-pipeline.html">
+            <span><i class="fa-solid fa-network-wired"></i></span>
+            <span>Acquisition Pipeline</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="user-escrow.html">
+            <span><i class="fa-solid fa-briefcase"></i></span>
+            <span>Escrow & Payment Schedules</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="user-vault.html">
+            <span><i class="fa-solid fa-credit-card"></i></span>
+            <span>Mortgage & Document Vault</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Bottom Profile -->
+      <div class="sidebar-footer">
+        <div class="user-profile-badge">
+          <div class="avatar-initials">MA</div>
+          <div class="user-info-text">
+            <div class="user-name-line">Manu</div>
+            <div class="user-email-line">manu@gmail.com</div>
+          </div>
+        </div>
+        <button class="btn-logout-sidebar btn-logout-action">
+          <span><i class="fa-solid fa-arrow-right"></i></span> LOGOUT
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN VIEWPORT -->
+    <div style="flex: 1; display: flex; flex-direction: column;">
+      <!-- Mobile Bar -->
+      <div class="mobile-dash-header">
+        <a href="user-dashboard.html" class="stackly-brand">
+          <img src="assets/images/stackly-logo-light.png" alt="Stackly" class="stackly-brand-img" style="height: 32px;">
+        </a>
+        <button id="dashSidebarToggle" style="background:none; color:#ffffff; font-size:1.5rem; cursor:pointer;"><i class="fa-solid fa-bars"></i></button>
+      </div>
+
+      <main class="dashboard-main">
+        <!-- Topbar -->
+        <div class="dashboard-topbar">
+          <div class="dash-heading-wrap">
+            <div class="dash-user-welcome-chip">
+              <i class="fa-solid fa-circle-user"></i>
+              <span>Signed in as: <strong class="current-user-email">manu@gmail.com</strong></span>
+            </div>
+            <h1>Acquisition Pipeline</h1>
+            <p class="dash-subtext">Track your active property acquisitions from initial token reservation to final deed registration.</p>
+            <div class="dash-actions-row" style="margin-top: 1.2rem;">
+              <button class="btn-dash-primary" onclick="window.location='404.html'">
+              <i class="fa-solid fa-plus"></i> BOOK NEW CONSULT
+            </button>
+            </div>
+          </div>
+          <div class="dash-user-profile-badge">
+            <span class="current-user-email">manu@gmail.com</span>
+            <div class="avatar-initials current-user-initials" style="width: 34px; height: 34px;">MA</div>
+          </div>
+        </div>
+
+        <!-- 4 Top Quick Cards -->
+        <div class="category-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-bottom: 1.5rem;">
+          <div class="category-card" style="text-align: center; background: #ffffff; padding: 1.2rem; border-radius: 14px; border: 1px solid var(--border-light);">
+            <div style="font-size: 1.6rem; color: var(--gold-primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-gavel"></i></div>
+            <strong style="display: block; font-size: 0.95rem; color: #1a0736;">Consult Advisor</strong>
+            <span style="font-size: 0.75rem; color: #645e78;">Dr. Shilpi Singh (Senior Counsel)</span>
+          </div>
+          <div class="category-card" style="text-align: center; background: #ffffff; padding: 1.2rem; border-radius: 14px; border: 1px solid var(--border-light);">
+            <div style="font-size: 1.6rem; color: var(--gold-primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-chart-simple"></i></div>
+            <strong style="display: block; font-size: 0.95rem; color: #1a0736;">Portfolio Tracker</strong>
+            <span style="font-size: 0.75rem; color: #645e78;">3 Assets Active • Phase 2 Handover</span>
+          </div>
+          <div class="category-card" style="text-align: center; background: #ffffff; padding: 1.2rem; border-radius: 14px; border: 1px solid var(--border-light);">
+            <div style="font-size: 1.6rem; color: var(--gold-primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-file-pdf"></i></div>
+            <strong style="display: block; font-size: 0.95rem; color: #1a0736;">Download Title Audit</strong>
+            <span style="font-size: 0.75rem; color: #645e78;">Fairlands Villa Legal Clearance PDF</span>
+          </div>
+          <div class="category-card" style="text-align: center; background: #ffffff; padding: 1.2rem; border-radius: 14px; border: 1px solid var(--border-light);">
+            <div style="font-size: 1.6rem; color: var(--gold-primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-credit-card"></i></div>
+            <strong style="display: block; font-size: 0.95rem; color: #1a0736;">Escrow Reminders</strong>
+            <span style="font-size: 0.75rem; color: #645e78;">Milestone Slab 3 • HDFC Disbursal</span>
+          </div>
+        </div>
+
+
+        <!-- Section 1: Active Acquisition Lifecycle Tracker -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-timeline"></i></span> Section 1: Active Acquisition Lifecycle Tracker
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Details <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Five-stage legal and transaction journey for current underway acquisitions</p>
+          <div style="background:#ffffff; border:1px solid var(--border-light); border-radius:14px; padding:1.4rem;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:1.2rem; flex-wrap:wrap; gap:10px;">
+              <strong style="color:#1a0736; font-size:1.05rem;">Fairlands Signature Villa #14 Acquisition</strong>
+              <span class="status-badge active">Stage 4: Registration Booking</span>
+            </div>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap:10px; text-align:center;">
+              <div style="background:#eefdf4; border:1px solid #86efac; padding:0.8rem; border-radius:8px;">
+                <i class="fa-solid fa-circle-check" style="color:#10b981;"></i>
+                <div style="font-size:0.75rem; font-weight:700; margin-top:4px; color:#1a0736;">1. Token Paid</div>
+              </div>
+              <div style="background:#eefdf4; border:1px solid #86efac; padding:0.8rem; border-radius:8px;">
+                <i class="fa-solid fa-circle-check" style="color:#10b981;"></i>
+                <div style="font-size:0.75rem; font-weight:700; margin-top:4px; color:#1a0736;">2. Title Vetted</div>
+              </div>
+              <div style="background:#eefdf4; border:1px solid #86efac; padding:0.8rem; border-radius:8px;">
+                <i class="fa-solid fa-circle-check" style="color:#10b981;"></i>
+                <div style="font-size:0.75rem; font-weight:700; margin-top:4px; color:#1a0736;">3. Sale Agreement</div>
+              </div>
+              <div style="background:#ecfeff; border:1px solid #06b6d4; padding:0.8rem; border-radius:8px;">
+                <i class="fa-solid fa-clock" style="color:#06b6d4;"></i>
+                <div style="font-size:0.75rem; font-weight:700; margin-top:4px; color:#1a0736;">4. SRO Slot Booked</div>
+              </div>
+              <div style="background:#f3f4f6; border:1px solid #e5e7eb; padding:0.8rem; border-radius:8px; opacity:0.6;">
+                <i class="fa-solid fa-key" style="color:#9ca3af;"></i>
+                <div style="font-size:0.75rem; font-weight:700; margin-top:4px; color:#1a0736;">5. Handover</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Token Commitments & Advance Receipt Slips -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-cart-shopping"></i></span> Section 2: Token Commitments & Advance Receipt Slips
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Details <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Formal advance tokens held in escrow with price-lock assurance</p>
+          <table class="dash-table">
+            <thead><tr><th>Token Ref</th><th>Asset Name</th><th>Token Amount</th><th>Lock-in Expiry</th><th>Price Locked</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td>#TOK-9912</td><td>Fairlands Signature Villa</td><td>₹ 5,00,000</td><td>15 Nov 2026</td><td>₹ 1.85 Cr (Guaranteed)</td><td><button class="btn-dash-outline" onclick="window.location='404.html'">Receipt Slip</button></td></tr>
+              <tr><td>#TOK-9874</td><td>CyberEdge Pre-Leased SCO</td><td>₹ 10,00,000</td><td>30 Nov 2026</td><td>₹ 2.10 Cr (Guaranteed)</td><td><button class="btn-dash-outline" onclick="window.location='404.html'">Receipt Slip</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Section 3: Sale Agreement & Pre-Registration Deeds in Draft -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-pen-fancy"></i></span> Section 3: Sale Agreement & Pre-Registration Deeds in Draft
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Details <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Review attorney-annotated draft sale deeds with customized indemnity clauses</p>
+          <div style="background:#ffffff; border:1px solid var(--border-light); border-radius:14px; padding:1.2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+            <div>
+              <strong style="color:#1a0736; font-size:1.05rem;">Fairlands Villa Final Sale Deed Draft (Rev 4)</strong>
+              <p style="font-size:0.85rem; color:#645e78; margin-top:4px;">Reviewed by Dr. Shilpi Singh with 100% builder indemnity and defect liability clause.</p>
+            </div>
+            <button class="btn-dash-primary" onclick="window.location='404.html'">Review Draft Deed</button>
+          </div>
+        </div>
+
+        <!-- Section 4: Sub-Registrar Office (SRO) Registration Appointment -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-landmark"></i></span> Section 4: Sub-Registrar Office (SRO) Registration Appointment
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Details <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Confirmed biometric and deed registration time slot at Salem West SRO</p>
+          <div style="background:#ffffff; border:1px solid var(--border-light); border-radius:14px; padding:1.2rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <strong style="color:#1a0736;">SRO Salem West Chamber Appointment</strong>
+              <span class="status-badge verified">Slot Confirmed</span>
+            </div>
+            <p style="font-size:0.85rem; color:#645e78;">Date: Tuesday, 10 Nov 2026 at 11:30 AM • Escort Senior Advocate: Mr. K. Soundarajan • Biometric token #44.</p>
+          </div>
+        </div>
+
+        <!-- Section 5: Final Asset Handover & Key Handover Checklist -->
+        <div class="dash-section-block">
+          <div class="dash-sec-head">
+            <div class="dash-sec-title">
+              <span><i class="fa-solid fa-certificate"></i></span> Section 5: Final Asset Handover & Key Handover Checklist
+            </div>
+            <button class="btn-dash-outline" onclick="window.location='404.html'">Details <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Physical snagging inspection, occupancy certificate verification, and key delivery</p>
+          <table class="dash-table">
+            <thead><tr><th>Inspection Area</th><th>Lead Civil Engineer</th><th>Status</th><th>Sign-off</th></tr></thead>
+            <tbody>
+              <tr><td>Electrical & HVAC Load Balances</td><td>Er. V. Muthusamy</td><td><span class="status-badge verified">Passed (Zero Defect)</span></td><td>Signed</td></tr>
+              <tr><td>Plumbing & Pressure Testing</td><td>Er. S. Karthik</td><td><span class="status-badge verified">Passed (Zero Defect)</span></td><td>Signed</td></tr>
+              <tr><td>Painting & Finishing Snags</td><td>Site Supervisor</td><td><span class="status-badge active">Final Polish</span></td><td>Pending</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <div id="toastMessage" class="toast-message" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
+
+
