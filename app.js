@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCalculators();
   initSquareYardsSearch();
   initMobileNav();
+  initWobbleCardAnimations();
   initDashboardFeatures();
   initHeroSlider();
   initDynamicCardUIUX();
@@ -361,26 +362,187 @@ function initMobileNav() {
   const navToggle = document.getElementById('mobileNavToggle');
   const navMenu = document.getElementById('navMenu');
 
+  // Create or get mobile nav backdrop overlay
+  let backdrop = document.getElementById('mobileNavBackdrop');
+  if (!backdrop && navMenu) {
+    backdrop = document.createElement('div');
+    backdrop.id = 'mobileNavBackdrop';
+    backdrop.className = 'mobile-nav-backdrop';
+    document.body.appendChild(backdrop);
+  }
+
+  function openMobileNav() {
+    if (!navMenu) return;
+    navMenu.classList.add('mobile-open');
+    if (navToggle) {
+      navToggle.classList.add('toggle-active');
+      navToggle.setAttribute('aria-expanded', 'true');
+      const icon = navToggle.querySelector('i');
+      if (icon) {
+        icon.className = 'fa-solid fa-xmark';
+      }
+    }
+    if (backdrop) backdrop.classList.add('active');
+    document.body.classList.add('menu-open');
+  }
+
+  function closeMobileNav() {
+    if (!navMenu) return;
+    navMenu.classList.remove('mobile-open');
+    if (navToggle) {
+      navToggle.classList.remove('toggle-active');
+      navToggle.setAttribute('aria-expanded', 'false');
+      const icon = navToggle.querySelector('i');
+      if (icon) {
+        icon.className = 'fa-solid fa-bars';
+      }
+    }
+    if (backdrop) backdrop.classList.remove('active');
+    document.body.classList.remove('menu-open');
+  }
+
   if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('mobile-open');
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navMenu.classList.contains('mobile-open');
+      if (isOpen) {
+        closeMobileNav();
+      } else {
+        openMobileNav();
+      }
+    });
+
+    if (backdrop) {
+      backdrop.addEventListener('click', closeMobileNav);
+    }
+
+    const drawerCloseBtn = document.getElementById('mobileDrawerClose');
+    if (drawerCloseBtn) {
+      drawerCloseBtn.addEventListener('click', closeMobileNav);
+    }
+
+    // Close when clicking nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', closeMobileNav);
+    });
+
+    // Close with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('mobile-open')) {
+        closeMobileNav();
+      }
     });
   }
 
   // Dashboard Mobile Sidebar Toggle
   const dashSidebarToggle = document.getElementById('dashSidebarToggle');
   const dashSidebar = document.querySelector('.dashboard-sidebar');
-  if (dashSidebarToggle && dashSidebar) {
-    dashSidebarToggle.addEventListener('click', () => {
-      dashSidebar.classList.toggle('mobile-open');
-    });
+  let dashBackdrop = document.getElementById('dashSidebarBackdrop');
+
+  if (dashSidebar && !dashBackdrop) {
+    dashBackdrop = document.createElement('div');
+    dashBackdrop.id = 'dashSidebarBackdrop';
+    dashBackdrop.className = 'mobile-nav-backdrop';
+    document.body.appendChild(dashBackdrop);
   }
 
-  // Close nav on menu item click
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      if (navMenu) navMenu.classList.remove('mobile-open');
+  function openDashSidebar() {
+    if (!dashSidebar) return;
+    dashSidebar.classList.add('mobile-open');
+    if (dashBackdrop) dashBackdrop.classList.add('active');
+    document.body.classList.add('menu-open');
+  }
+
+  function closeDashSidebar() {
+    if (!dashSidebar) return;
+    dashSidebar.classList.remove('mobile-open');
+    if (dashBackdrop) dashBackdrop.classList.remove('active');
+    document.body.classList.remove('menu-open');
+  }
+
+  if (dashSidebarToggle && dashSidebar) {
+    dashSidebarToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (dashSidebar.classList.contains('mobile-open')) {
+        closeDashSidebar();
+      } else {
+        openDashSidebar();
+      }
     });
+
+    if (dashBackdrop) {
+      dashBackdrop.addEventListener('click', closeDashSidebar);
+    }
+
+    dashSidebar.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('click', () => {
+        if (window.innerWidth <= 1024) {
+          closeDashSidebar();
+        }
+      });
+    });
+  }
+}
+
+// ==========================================
+// 5B. WOBBLE CARD ENTRANCE ANIMATION (INTERSECTION OBSERVER)
+// ==========================================
+function initWobbleCardAnimations() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
+  const cardSelectors = [
+    '.project-card',
+    '.featured-prop-card',
+    '.service-card',
+    '.service-detail-card',
+    '.why-card',
+    '.why-us-card',
+    '.advisor-card',
+    '.team-card',
+    '.testi-card',
+    '.testimonial-card',
+    '.category-card',
+    '.metric-card',
+    '.stat-card',
+    '.audit-feature-card',
+    '.article-card',
+    '.blog-card',
+    '.portal-card',
+    '.faq-item',
+    '.calculator-card',
+    '.dash-section-block'
+  ];
+
+  const cards = document.querySelectorAll(cardSelectors.join(', '));
+  if (!cards.length) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const card = entry.target;
+        const parent = card.parentElement;
+        let index = 0;
+        if (parent) {
+          const siblings = Array.from(parent.children).filter(el => el.classList.contains('wobble-card'));
+          index = siblings.indexOf(card);
+          if (index < 0) index = 0;
+        }
+        const delay = Math.min(index * 0.08, 0.48);
+        card.style.animationDelay = `${delay}s`;
+        card.classList.add('wobble-active');
+        obs.unobserve(card);
+      }
+    });
+  }, {
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.12
+  });
+
+  cards.forEach(card => {
+    card.classList.add('wobble-card');
+    observer.observe(card);
   });
 }
 

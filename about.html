@@ -38,11 +38,22 @@
       </a>
       <nav>
         <ul class="nav-menu" id="navMenu">
+          <li class="mobile-drawer-header">
+            <div class="stackly-brand">
+              <img src="assets/images/stackly-mark.png" alt="Stackly" style="height:32px;width:auto;">
+              <span style="font-family:var(--font-heading);font-size:1.3rem;font-weight:900;color:#1a0736;">Stackly</span>
+            </div>
+            <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+          </li>
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="about.html" class="nav-link active">About</a></li>
           <li><a href="services.html" class="nav-link">Service</a></li>
           <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="mobile-drawer-auth">
+            <a href="login.html" class="btn-login-pill open-login-btn"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Login</a>
+            <a href="signup.html" class="btn-signup-pill open-signup-btn"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg> Signup</a>
+          </li>
         </ul>
       </nav>
       <div class="nav-auth-buttons">
