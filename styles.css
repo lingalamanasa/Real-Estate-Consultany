@@ -5038,10 +5038,49 @@ body.menu-open {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
     gap: 20px !important;
   }
+
+  /* Section padding on tablet */
+  .category-section,
+  .localities-section,
+  .projects-section,
+  .calculator-section,
+  .process-section,
+  .market-intel-section,
+  .testimonials-section,
+  .vip-lead-section,
+  .salem-map-section {
+    padding: 3.5rem 1.25rem !important;
+  }
 }
 
 /* 6. Mobile Phone Specific Optimizations (<= 640px) */
 @media (max-width: 640px) {
+  /* Section Padding & Spacing across entire website */
+  .category-section,
+  .localities-section,
+  .projects-section,
+  .calculator-section,
+  .process-section,
+  .market-intel-section,
+  .testimonials-section,
+  .vip-lead-section,
+  .salem-map-section {
+    padding: 2.75rem 1rem !important;
+  }
+
+  .section-header-block {
+    margin-bottom: 1.8rem !important;
+    padding: 0 0.5rem !important;
+  }
+  .section-header-block h2 {
+    font-size: clamp(1.4rem, 5.5vw, 1.85rem) !important;
+    line-height: 1.25 !important;
+  }
+  .section-header-block p {
+    font-size: 0.9rem !important;
+    margin-top: 0.4rem !important;
+  }
+
   /* Search filter fully single column */
   .sy-search-inputs {
     grid-template-columns: 1fr !important;
@@ -5075,6 +5114,231 @@ body.menu-open {
 
   .project-img-box {
     height: 210px !important;
+  }
+
+  /* Property Card Mobile Layout & Overflow Prevention */
+  .project-card {
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06) !important;
+  }
+
+  .project-body {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .project-card-title {
+    font-size: 1.15rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  .project-location {
+    font-size: 0.82rem !important;
+    margin-bottom: 0.85rem !important;
+  }
+
+  .project-key-specs {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 4px !important;
+    padding: 0.65rem 0.5rem !important;
+    margin-bottom: 1rem !important;
+    background: #f8fafc !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  .project-spec-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 0 2px !important;
+    border-right: 1px solid #e2e8f0 !important;
+  }
+
+  .project-spec-item:last-child {
+    border-right: none !important;
+  }
+
+  .project-spec-item .spec-lbl {
+    font-size: 0.63rem !important;
+    color: #64748b !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 100% !important;
+  }
+
+  .project-spec-item .spec-val {
+    font-size: 0.78rem !important;
+    font-weight: 800 !important;
+    color: #1e1b4b !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+    margin-top: 2px !important;
+  }
+
+  .project-footer {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    margin-top: auto !important;
+    padding-top: 0.85rem !important;
+    border-top: 1px solid #f1eef8 !important;
+  }
+
+  .project-price-block {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: baseline !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+  }
+
+  .project-price-lbl {
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    color: #7e68ad !important;
+    text-transform: uppercase !important;
+  }
+
+  .project-price-val {
+    font-size: 1.2rem !important;
+    font-weight: 900 !important;
+    color: #16042b !important;
+    white-space: nowrap !important;
+  }
+
+  .btn-project-cta {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 0.9rem !important;
+    font-weight: 800 !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+  }
+
+  /* Locality Cards */
+  .locality-card {
+    border-radius: 16px !important;
+    overflow: hidden !important;
+  }
+  .loc-body {
+    padding: 1.1rem 1rem !important;
+  }
+  .loc-footer {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+  }
+  .loc-explore-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.65rem 1rem !important;
+  }
+
+  /* Calculator Section */
+  .calc-box-card {
+    padding: 1.35rem 1rem !important;
+    border-radius: 18px !important;
+    gap: 20px !important;
+  }
+  .calc-result-panel {
+    padding: 1.25rem 1rem !important;
+    border-radius: 16px !important;
+  }
+  .calc-actions {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  .btn-calc-cta,
+  .btn-calc-amort {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Process, Intel, & Testimonial Cards */
+  .process-grid,
+  .intel-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .process-card,
+  .intel-card,
+  .testi-card {
+    padding: 1.35rem 1.1rem !important;
+    border-radius: 18px !important;
+  }
+
+  /* VIP Lead Box */
+  .vip-lead-box {
+    padding: 1.5rem 1rem !important;
+    border-radius: 18px !important;
+  }
+  .vip-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .btn-vip-submit {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Emergency actions */
+  .emergency-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .btn-call-red,
+  .btn-whatsapp-green {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Filter bar responsiveness */
+  .uiux-filter-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.85rem !important;
+  }
+  .uiux-filter-pills {
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    padding-bottom: 6px !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .uiux-pill-btn {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Floating compare dock */
+  .compare-float-dock {
+    width: 94vw !important;
+    left: 3vw !important;
+    transform: translateY(120px) !important;
+    flex-direction: column !important;
+    padding: 0.75rem 1rem !important;
+    gap: 8px !important;
+    bottom: 12px !important;
+  }
+  .compare-float-dock.active {
+    transform: translateY(0) !important;
   }
 
   /* Team advisors grid */
@@ -5134,12 +5398,57 @@ body.menu-open {
     max-width: 86vw !important;
     z-index: 1005 !important;
   }
+
+  .dash-section-block {
+    padding: 1.25rem 0.95rem !important;
+    border-radius: 16px !important;
+    margin-bottom: 1.4rem !important;
+  }
+  .dash-content,
+  .dashboard-main {
+    padding: 1rem 0.75rem !important;
+  }
 }
 
 /* 7. Ultra-Narrow Mobile Screens (320px - 375px) */
 @media (max-width: 375px) {
   html {
     font-size: 14.5px !important;
+  }
+
+  .category-section,
+  .localities-section,
+  .projects-section,
+  .calculator-section,
+  .process-section,
+  .market-intel-section,
+  .testimonials-section,
+  .vip-lead-section,
+  .salem-map-section {
+    padding: 2.1rem 0.65rem !important;
+  }
+
+  .project-body {
+    padding: 1rem 0.75rem !important;
+  }
+  .project-card-title {
+    font-size: 1.05rem !important;
+  }
+  .project-price-val {
+    font-size: 1.1rem !important;
+  }
+  .btn-project-cta {
+    font-size: 0.84rem !important;
+    padding: 0.65rem 0.8rem !important;
+  }
+  .calc-box-card {
+    padding: 1.1rem 0.75rem !important;
+  }
+  .vip-lead-box {
+    padding: 1.2rem 0.75rem !important;
+  }
+  .dash-section-block {
+    padding: 1rem 0.75rem !important;
   }
 
   .nav-container {
