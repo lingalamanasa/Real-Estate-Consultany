@@ -2786,21 +2786,36 @@ body.modal-open {
 @media (max-width: 768px) {
   .nav-menu {
     position: fixed;
-    top: 70px;
-    left: -100%;
-    width: 80%;
-    max-width: 320px;
-    height: calc(100vh - 70px);
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100dvh;
     background: #ffffff;
     flex-direction: column;
-    padding: 2rem 1.5rem;
-    box-shadow: 4px 0 20px rgba(0,0,0,0.1);
-    transition: left 0.3s ease;
-    align-items: flex-start;
-    gap: 1.5rem;
+    padding: 1.5rem 1.5rem 2.5rem;
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.12);
+    align-items: stretch;
+    gap: 0.75rem;
+    z-index: 9999;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease, visibility 0.38s;
   }
   .nav-menu.mobile-open {
-    left: 0;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
   }
   .mobile-nav-toggle {
     display: block;
@@ -4836,30 +4851,32 @@ body.menu-open {
   .nav-menu {
     position: fixed !important;
     top: 0 !important;
+    left: 0 !important;
     right: 0 !important;
-    left: auto !important;
-    width: min(340px, 86vw) !important;
-    max-width: 360px !important;
+    width: 100% !important;
+    max-width: 100% !important;
     height: 100dvh !important;
     background: #ffffff !important;
     flex-direction: column !important;
-    padding: 1.5rem 1.25rem 2.5rem !important;
-    box-shadow: -10px 0 35px rgba(15, 23, 42, 0.16) !important;
+    padding: 1.5rem 1.5rem 3rem !important;
+    box-shadow: none !important;
     align-items: stretch !important;
-    gap: 0.6rem !important;
-    z-index: 999 !important;
+    gap: 0.75rem !important;
+    z-index: 9999 !important;
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch !important;
-    transform: translateX(110%) scale(0.96) !important;
+    transform: translateX(100%) !important;
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
-    transition: transform 0.42s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease, visibility 0.42s !important;
-    border-left: 1px solid var(--border-light) !important;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease, visibility 0.4s !important;
+    border-left: none !important;
   }
 
   .nav-menu.mobile-open {
-    transform: translateX(0) scale(1) !important;
+    transform: translateX(0) !important;
+    width: 100% !important;
+    max-width: 100% !important;
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
