@@ -91,7 +91,7 @@
             <div class="user-email-line">manu@gmail.com</div>
           </div>
         </div>
-        <button class="btn-logout-sidebar btn-logout-action">
+        <button class="btn-logout-sidebar btn-logout-action" onclick="event.preventDefault(); localStorage.removeItem('stackly_auth_user'); window.location.href='index.html';">
           <span><i class="fa-solid fa-arrow-right"></i></span> LOGOUT
         </button>
       </div>

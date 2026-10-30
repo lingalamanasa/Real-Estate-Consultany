@@ -59,17 +59,40 @@ function initDashboardFeatures() {
   if (sidebarToggle && sidebar) {
     sidebarToggle.addEventListener('click', () => {
       sidebar.classList.toggle('open');
+      sidebar.classList.toggle('mobile-open');
     });
   }
 
-  document.querySelectorAll('.btn-logout-action').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+  // Unified Bulletproof Logout Handler
+  document.querySelectorAll('.btn-logout-action, .btn-logout-sidebar').forEach(btn => {
+    btn.addEventListener('click', function(e) {
       e.preventDefault();
+      e.stopPropagation();
       localStorage.removeItem('stackly_auth_user');
-      showToast('Logged out successfully. Redirecting to home...');
+      localStorage.removeItem('stackly_user_role');
+      if (typeof showToast === 'function') {
+        showToast('Logged out successfully. Redirecting to home...');
+      }
       setTimeout(() => {
         window.location.href = 'index.html';
-      }, 700);
+      }, 450);
+    });
+  });
+
+  // Action buttons
+  document.querySelectorAll('.btn-book-consult').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (typeof showToast === 'function') {
+        showToast('<i class="fa-solid fa-calendar-check"></i> Advisory Slot Booked: Consultant Adv. Shilpi Singh assigned.');
+      }
+    });
+  });
+
+  document.querySelectorAll('.btn-export-census').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (typeof showToast === 'function') {
+        showToast('<i class="fa-solid fa-download"></i> Downloading Stackly Executive Real Estate Census PDF...');
+      }
     });
   });
 }
@@ -576,36 +599,8 @@ function initWobbleCardAnimations() {
 }
 
 // ==========================================
-// 6. DASHBOARD ACTIONS
+// 6. DASHBOARD ACTIONS (Unified in initDashboardFeatures)
 // ==========================================
-function initDashboardFeatures() {
-  // Logout buttons
-  document.querySelectorAll('.btn-logout-action').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      showToast('You have been logged out safely.');
-      setTimeout(() => {
-        window.location.hash = 'home';
-        if (window.location.pathname.includes('dashboard')) {
-          window.location.href = 'index.html';
-        }
-      }, 400);
-    });
-  });
-
-  // Action buttons
-  document.querySelectorAll('.btn-book-consult').forEach(btn => {
-    btn.addEventListener('click', () => {
-      showToast('<i class="fa-solid fa-calendar-check"></i> Advisory Slot Booked: Consultant Adv. Shilpi Singh assigned.');
-    });
-  });
-
-  document.querySelectorAll('.btn-export-census').forEach(btn => {
-    btn.addEventListener('click', () => {
-      showToast('<i class="fa-solid fa-download"></i> Downloading Stackly Executive Real Estate Census PDF...');
-    });
-  });
-}
 
 // ==========================================
 // TOAST NOTIFICATIONS
