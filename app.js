@@ -479,7 +479,7 @@ function initMobileNav() {
     });
   }
 
-  // Dashboard Mobile Sidebar Toggle & Drawer Controller
+  // Dashboard Mobile Sidebar Toggle & Drawer Controller (Debounced & Z-Indexed)
   const dashSidebarToggle = document.getElementById('dashSidebarToggle');
   const dashSidebar = document.querySelector('.dashboard-sidebar');
   let dashBackdrop = document.getElementById('dashSidebarBackdrop');
@@ -521,11 +521,17 @@ function initMobileNav() {
     }
   }
 
+  let lastDashToggleStamp = 0;
   function toggleDashSidebar(e) {
     if (e) {
       e.preventDefault();
       e.stopPropagation();
     }
+    const now = Date.now();
+    // 350ms debounce strictly blocks duplicate invocation from inline onclick + event listener or touch/click double fires
+    if (now - lastDashToggleStamp < 350) return;
+    lastDashToggleStamp = now;
+
     const sb = document.querySelector('.dashboard-sidebar');
     if (!sb) return;
     if (sb.classList.contains('mobile-open')) {
@@ -540,11 +546,18 @@ function initMobileNav() {
   window.closeDashSidebar = closeDashSidebar;
   window.toggleDashSidebar = toggleDashSidebar;
 
-  if (dashSidebarToggle && dashSidebar) {
-    dashSidebarToggle.addEventListener('click', toggleDashSidebar);
+  if (dashSidebar) {
+    // Only bind programmatic listener if inline onclick is not already set
+    if (dashSidebarToggle && !dashSidebarToggle.getAttribute('onclick')) {
+      dashSidebarToggle.addEventListener('click', toggleDashSidebar);
+    }
 
     if (dashBackdrop) {
       dashBackdrop.addEventListener('click', closeDashSidebar);
+      dashBackdrop.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        closeDashSidebar();
+      });
     }
 
     const closeBtn = document.getElementById('dashSidebarClose');
