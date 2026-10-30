@@ -183,8 +183,7 @@ function initAuthModals() {
     if (e.key === 'Escape') {
       closeModal(loginModal);
       closeModal(signupModal);
-      const qvModal = document.getElementById('quickviewModal');
-      if (qvModal) closeModal(qvModal);
+      // quickview removed
     }
   });
 
@@ -256,7 +255,7 @@ function lockBodyScroll() {
 }
 
 function unlockBodyScroll() {
-  const anyActive = document.querySelector('.modal-overlay.active, .quickview-modal-backdrop.active');
+  const anyActive = document.querySelector('.modal-overlay.active');
   if (!anyActive) {
     document.body.classList.remove('modal-open');
   }
@@ -793,42 +792,6 @@ function initDynamicCardUIUX() {
       });
       renderCompareDock();
       showToast('Cleared all compared properties.');
-    });
-  }
-
-  // E. Interactive Quick-View Modal Trigger
-  const qvModal = document.getElementById('quickviewModal');
-  const qvCloseBtn = document.getElementById('qvCloseBtn');
-  
-  document.querySelectorAll('.btn-quickview-action, .btn-qv-trigger').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const card = this.closest('.project-card');
-      if (!card || !qvModal) return;
-      
-      const title = card.querySelector('.project-title')?.textContent || 'Property';
-      const loc = card.querySelector('.project-loc')?.textContent || '';
-      const price = card.querySelector('.project-price-val, .project-price')?.textContent || '';
-      const img = card.querySelector('.project-img-box img')?.src || '';
-
-      const qvTitle = document.getElementById('qvTitle');
-      const qvLoc = document.getElementById('qvLoc');
-      const qvPrice = document.getElementById('qvPrice');
-      const qvImg = document.getElementById('qvImg');
-
-      if (qvTitle) qvTitle.textContent = title;
-      if (qvLoc) qvLoc.textContent = loc;
-      if (qvPrice) qvPrice.textContent = price;
-      if (qvImg) qvImg.src = img;
-
-      openModal(qvModal);
-    });
-  });
-
-  if (qvCloseBtn && qvModal) {
-    qvCloseBtn.addEventListener('click', () => closeModal(qvModal));
-    qvModal.addEventListener('click', (e) => {
-      if (e.target === qvModal) closeModal(qvModal);
     });
   }
 
