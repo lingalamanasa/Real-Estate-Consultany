@@ -3792,6 +3792,14 @@ body.modal-open {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.category-card .category-cta-pill i {
+  pointer-events: none;
 }
 
 .category-card:hover .category-cta-pill {

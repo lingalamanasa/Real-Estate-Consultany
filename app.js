@@ -859,9 +859,23 @@ function initDynamicCardUIUX() {
     });
   });
 
-  // H. Category Cards Click to Filter
+  // H. Category Cards Click & Category CTA Pill Handlers
+  document.querySelectorAll('.category-cta-pill').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      window.location.href = '404.html';
+    });
+  });
+
   document.querySelectorAll('.category-card').forEach(card => {
-    card.addEventListener('click', function() {
+    card.addEventListener('click', function(e) {
+      if (e.target.closest('.category-cta-pill')) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.location.href = '404.html';
+        return;
+      }
       const catTitle = this.querySelector('.category-title')?.textContent.toLowerCase() || '';
       const projectSec = document.getElementById('sec-projects');
       if (projectSec) projectSec.scrollIntoView({ behavior: 'smooth' });
