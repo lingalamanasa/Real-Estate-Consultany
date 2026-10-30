@@ -54,14 +54,7 @@ function initPreloader() {
 // DASHBOARD UTILITIES & LOGOUT
 // ==========================================
 function initDashboardFeatures() {
-  const sidebarToggle = document.getElementById('dashSidebarToggle');
-  const sidebar = document.querySelector('.dashboard-sidebar');
-  if (sidebarToggle && sidebar) {
-    sidebarToggle.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-      sidebar.classList.toggle('mobile-open');
-    });
-  }
+  // Mobile sidebar drawer is managed with backdrop & animated state in initMobileNav()
 
   // Unified Bulletproof Logout Handler
   document.querySelectorAll('.btn-logout-action, .btn-logout-sidebar').forEach(btn => {
@@ -486,7 +479,7 @@ function initMobileNav() {
     });
   }
 
-  // Dashboard Mobile Sidebar Toggle
+  // Dashboard Mobile Sidebar Toggle & Drawer Controller
   const dashSidebarToggle = document.getElementById('dashSidebarToggle');
   const dashSidebar = document.querySelector('.dashboard-sidebar');
   let dashBackdrop = document.getElementById('dashSidebarBackdrop');
@@ -499,39 +492,87 @@ function initMobileNav() {
   }
 
   function openDashSidebar() {
-    if (!dashSidebar) return;
-    dashSidebar.classList.add('mobile-open');
-    if (dashBackdrop) dashBackdrop.classList.add('active');
+    const sb = document.querySelector('.dashboard-sidebar');
+    if (!sb) return;
+    sb.classList.add('mobile-open');
+    const backdrop = document.getElementById('dashSidebarBackdrop');
+    if (backdrop) backdrop.classList.add('active');
     document.body.classList.add('menu-open');
+    const toggle = document.getElementById('dashSidebarToggle');
+    if (toggle) {
+      toggle.setAttribute('aria-expanded', 'true');
+      const icon = toggle.querySelector('i');
+      if (icon) icon.className = 'fa-solid fa-xmark';
+    }
   }
 
   function closeDashSidebar() {
-    if (!dashSidebar) return;
-    dashSidebar.classList.remove('mobile-open');
-    if (dashBackdrop) dashBackdrop.classList.remove('active');
+    const sb = document.querySelector('.dashboard-sidebar');
+    if (!sb) return;
+    sb.classList.remove('mobile-open');
+    const backdrop = document.getElementById('dashSidebarBackdrop');
+    if (backdrop) backdrop.classList.remove('active');
     document.body.classList.remove('menu-open');
+    const toggle = document.getElementById('dashSidebarToggle');
+    if (toggle) {
+      toggle.setAttribute('aria-expanded', 'false');
+      const icon = toggle.querySelector('i');
+      if (icon) icon.className = 'fa-solid fa-bars';
+    }
   }
 
-  if (dashSidebarToggle && dashSidebar) {
-    dashSidebarToggle.addEventListener('click', (e) => {
+  function toggleDashSidebar(e) {
+    if (e) {
+      e.preventDefault();
       e.stopPropagation();
-      if (dashSidebar.classList.contains('mobile-open')) {
-        closeDashSidebar();
-      } else {
-        openDashSidebar();
-      }
-    });
+    }
+    const sb = document.querySelector('.dashboard-sidebar');
+    if (!sb) return;
+    if (sb.classList.contains('mobile-open')) {
+      closeDashSidebar();
+    } else {
+      openDashSidebar();
+    }
+  }
+
+  // Expose globally for inline onclick fallbacks
+  window.openDashSidebar = openDashSidebar;
+  window.closeDashSidebar = closeDashSidebar;
+  window.toggleDashSidebar = toggleDashSidebar;
+
+  if (dashSidebarToggle && dashSidebar) {
+    dashSidebarToggle.addEventListener('click', toggleDashSidebar);
 
     if (dashBackdrop) {
       dashBackdrop.addEventListener('click', closeDashSidebar);
     }
 
-    dashSidebar.querySelectorAll('a, button').forEach(el => {
+    const closeBtn = document.getElementById('dashSidebarClose');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeDashSidebar();
+      });
+    }
+
+    dashSidebar.querySelectorAll('a, button:not(#dashSidebarClose)').forEach(el => {
       el.addEventListener('click', () => {
         if (window.innerWidth <= 1024) {
           closeDashSidebar();
         }
       });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && dashSidebar.classList.contains('mobile-open')) {
+        closeDashSidebar();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1024 && dashSidebar.classList.contains('mobile-open')) {
+        closeDashSidebar();
+      }
     });
   }
 }

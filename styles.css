@@ -2330,12 +2330,36 @@ body.modal-open {
   display: none;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.4rem;
-  background: #0b1120;
+  padding: 0.85rem 1.25rem;
+  background: #090e17;
   color: #ffffff;
   position: sticky;
   top: 0;
-  z-index: 99;
+  z-index: 999;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-dash-header #dashSidebarToggle {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  font-size: 1.35rem;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.mobile-dash-header #dashSidebarToggle:hover,
+.mobile-dash-header #dashSidebarToggle:active {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.04);
 }
 
 .dashboard-topbar {
@@ -2827,6 +2851,52 @@ body.modal-open {
   }
   .sy-search-inputs {
     grid-template-columns: 1fr 1fr;
+  }
+  .dashboard-layout {
+    flex-direction: column !important;
+  }
+  .mobile-dash-header {
+    display: flex !important;
+  }
+  .dashboard-sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: -100% !important;
+    bottom: 0 !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    width: 290px !important;
+    max-width: 86vw !important;
+    z-index: 2100 !important;
+    background: linear-gradient(180deg, #090e17 0%, #111927 100%) !important;
+    box-shadow: none !important;
+    transition: left 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+  .dashboard-sidebar.mobile-open {
+    left: 0 !important;
+    box-shadow: 12px 0 45px rgba(0, 0, 0, 0.8) !important;
+  }
+  .dash-sidebar-close {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  #dashSidebarBackdrop {
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(9, 14, 23, 0.65) !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    z-index: 2050 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease !important;
+  }
+  #dashSidebarBackdrop.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
   }
 }
 

@@ -31,10 +31,11 @@
   <div class="dashboard-layout">
     <!-- LEFT SIDEBAR -->
     <aside class="dashboard-sidebar">
-      <div class="sidebar-header">
+      <div class="sidebar-header" style="display:flex; align-items:center; justify-content:space-between;">
         <a href="user-dashboard.html" class="stackly-brand">
           <img src="assets/images/stackly-mark.webp" alt="Stackly" class="stackly-brand-img" style="height:36px;width:auto;filter:brightness(0) invert(1);"><span class="stackly-brand-name" style="font-family:var(--font-heading);font-size:1.4rem;font-weight:900;color:#ffffff;letter-spacing:0.5px;">Stackly</span>
         </a>
+              <button class="dash-sidebar-close" id="dashSidebarClose" onclick="closeDashSidebar(event)" aria-label="Close sidebar" style="background:none; border:none; color:#ffffff; font-size:1.4rem; cursor:pointer; display:none; padding:4px 8px;"><i class="fa-solid fa-xmark"></i></button>
       </div>
 
       <ul class="sidebar-menu">
@@ -104,7 +105,7 @@
         <a href="user-dashboard.html" class="stackly-brand">
           <img src="assets/images/stackly-logo-light.webp" alt="Stackly" class="stackly-brand-img" style="height: 32px;">
         </a>
-        <button id="dashSidebarToggle" style="background:none; color:#ffffff; font-size:1.5rem; cursor:pointer;"><i class="fa-solid fa-bars"></i></button>
+        <button id="dashSidebarToggle" aria-label="Toggle Navigation Menu" onclick="toggleDashSidebar(event)" style="background:none; border:none; color:#ffffff; font-size:1.5rem; cursor:pointer; padding:6px 10px; display:inline-flex; align-items:center; justify-content:center;"><i class="fa-solid fa-bars"></i></button>
       </div>
 
       <main class="dashboard-main">
