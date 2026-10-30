@@ -1077,3 +1077,24 @@ function initPageScrollAnimations() {
     applyUser();
   }
 })();
+
+// Dynamic Table Responsive Mobile Label Fallback
+(function initTableMobileLabels() {
+  function applyLabels() {
+    document.querySelectorAll('.dash-table').forEach(table => {
+      const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent.trim());
+      table.querySelectorAll('tbody tr').forEach(row => {
+        Array.from(row.children).forEach((cell, idx) => {
+          if (headers[idx] && !cell.getAttribute('data-label')) {
+            cell.setAttribute('data-label', headers[idx]);
+          }
+        });
+      });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyLabels);
+  } else {
+    applyLabels();
+  }
+})();

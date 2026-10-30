@@ -4835,7 +4835,7 @@ body.menu-open {
 
 .dash-table-wrap table {
   width: 100%;
-  min-width: 620px;
+  /* min-width removed for fluid responsiveness */
   border-collapse: collapse;
 }
 
@@ -5373,13 +5373,14 @@ body.menu-open {
 
   /* Dashboard Header & Profile Badge */
   .dashboard-topbar {
-    flex-direction: column !important;
+    display: flex !important;
+    flex-direction: column-reverse !important;
     align-items: stretch !important;
-    gap: 1rem !important;
+    gap: 0.8rem !important;
   }
   .dash-user-profile-badge {
-    margin-left: 0 !important;
-    align-self: flex-start !important;
+    margin-left: auto !important;
+    align-self: flex-end !important;
   }
   .dash-actions-row {
     flex-wrap: wrap !important;
@@ -5529,5 +5530,190 @@ body.menu-open {
     width: 100% !important;
     z-index: 1000 !important;
     transform: none !important;
+  }
+}
+
+
+/* ========================================================
+   RESPONSIVE MOBILE DASHBOARD TABLE & SECTION CARDS (<= 768px)
+   Eliminates horizontal scrolling, clipping, and overflow
+   ======================================================== */
+@media (max-width: 768px) {
+  .dashboard-layout {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  .dashboard-main {
+    padding: 1rem 0.75rem !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+
+  .dash-section-block {
+    padding: 1.25rem 0.95rem !important;
+    border-radius: 16px !important;
+    margin-bottom: 1.25rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .dash-sec-head {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .dash-sec-title {
+    font-size: 1.1rem !important;
+    line-height: 1.3 !important;
+    word-break: break-word !important;
+    width: 100% !important;
+  }
+
+  .dash-sec-head .btn-dash-outline {
+    align-self: flex-start !important;
+    padding: 0.45rem 0.95rem !important;
+    font-size: 0.82rem !important;
+  }
+
+  /* Transform table wrap into a fluid zero-overflow card container */
+  .dash-table-wrap {
+    overflow: visible !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    margin: 0.75rem 0 !important;
+    width: 100% !important;
+  }
+
+  .dash-table,
+  .dash-table-wrap table {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    border: none !important;
+    background: transparent !important;
+  }
+
+  /* Hide raw table header row */
+  .dash-table thead {
+    display: none !important;
+  }
+
+  .dash-table tbody {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  /* Each table row becomes an elegant, modern card */
+  .dash-table tbody tr {
+    display: flex !important;
+    flex-direction: column !important;
+    background: #ffffff !important;
+    border: 1px solid var(--border-light) !important;
+    border-radius: 14px !important;
+    padding: 1rem !important;
+    box-shadow: 0 2px 8px rgba(26, 7, 54, 0.04) !important;
+    gap: 8px !important;
+    transform: none !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+
+  .dash-table tbody tr:hover {
+    transform: none !important;
+    box-shadow: 0 4px 12px rgba(26, 7, 54, 0.08) !important;
+    background: #ffffff !important;
+  }
+
+  /* Table cells inside the card */
+  .dash-table td {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0.45rem 0 !important;
+    border: none !important;
+    border-bottom: 1px dashed #f1eef8 !important;
+    font-size: 0.85rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    color: #1f1c2e !important;
+    gap: 12px !important;
+    text-align: right !important;
+  }
+
+  .dash-table td:last-child {
+    border-bottom: none !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Label displayed before cell value */
+  .dash-table td::before {
+    content: attr(data-label);
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    color: #7e68ad !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    flex-shrink: 0 !important;
+    text-align: left !important;
+    max-width: 45% !important;
+  }
+
+  /* If cell has no label or is empty, don't show ::before */
+  .dash-table td:not([data-label])::before,
+  .dash-table td[data-label=""]::before {
+    display: none !important;
+  }
+
+  /* Primary item highlight (Title / Project Name / Protocol) */
+  .dash-table td:first-child {
+    border-bottom: 1.5px solid #ede9fe !important;
+    padding-bottom: 0.6rem !important;
+    padding-top: 0 !important;
+  }
+  .dash-table td:first-child strong {
+    font-size: 0.95rem !important;
+    color: #1a0736 !important;
+    font-weight: 800 !important;
+    text-align: right !important;
+  }
+
+  /* For preview images in cells */
+  .dash-table td img {
+    max-width: 70px !important;
+    height: 48px !important;
+    border-radius: 8px !important;
+    object-fit: cover !important;
+  }
+
+  /* Action buttons inside table cells */
+  .dash-table td .btn-dash-primary,
+  .dash-table td .btn-dash-outline,
+  .dash-table td .btn-view-deal,
+  .dash-table td button {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.6rem 1rem !important;
+    font-size: 0.85rem !important;
+    border-radius: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Badges inside cells */
+  .dash-table td .status-badge {
+    margin-left: auto !important;
+    font-size: 0.76rem !important;
   }
 }
