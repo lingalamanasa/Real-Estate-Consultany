@@ -352,6 +352,36 @@ function initSquareYardsSearch() {
       window.location.href = '404.html';
     });
   }
+
+  // Admin Leads: Manual Token Issuance Form Validation
+  const tokenForm = document.getElementById('tokenIssuanceForm');
+  if (tokenForm) {
+    tokenForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nameInput = document.getElementById('clientFullName');
+      if (nameInput && !nameInput.value.trim()) {
+        nameInput.focus();
+        showToast('Please enter client full name.');
+        return;
+      }
+      window.location.href = '404.html';
+    });
+  }
+
+  // User Dashboard: Inquiry Ticket Form Validation
+  const inquiryForm = document.getElementById('inquiryTicketForm');
+  if (inquiryForm) {
+    inquiryForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const subjInput = document.getElementById('inquirySubject');
+      if (subjInput && !subjInput.value.trim()) {
+        subjInput.focus();
+        showToast('Please enter inquiry subject.');
+        return;
+      }
+      window.location.href = '404.html';
+    });
+  }
 }
 
 // ==========================================

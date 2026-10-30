@@ -218,21 +218,23 @@
           </div>
           <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Issue walk-in investor tokens directly with designated priority flags</p>
           <div style="background:#ffffff; border:1px solid var(--border-light); border-radius:14px; padding:1.2rem;">
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:12px;">
-              <div>
-                <label style="font-size:0.8rem; font-weight:700; color:#1a0736;">Client Full Name</label>
-                <input type="text" placeholder="e.g. S. Radhakrishnan" style="width:100%; padding:0.6rem; border:1px solid var(--border-light); border-radius:8px; margin-top:4px;">
+            <form id="tokenIssuanceForm" onsubmit="event.preventDefault(); window.location.href='404.html';">
+              <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:12px;">
+                <div>
+                  <label style="font-size:0.8rem; font-weight:700; color:#1a0736;">Client Full Name *</label>
+                  <input type="text" id="clientFullName" name="clientFullName" placeholder="e.g. S. Radhakrishnan" required minlength="2" style="width:100%; padding:0.6rem; border:1px solid var(--border-light); border-radius:8px; margin-top:4px; box-sizing: border-box;">
+                </div>
+                <div>
+                  <label style="font-size:0.8rem; font-weight:700; color:#1a0736;">Investment Bracket *</label>
+                  <select id="investmentBracket" name="investmentBracket" required style="width:100%; padding:0.6rem; border:1px solid var(--border-light); border-radius:8px; margin-top:4px; box-sizing: border-box;">
+                    <option value="₹ 1 Cr - 3 Cr (HNI)">₹ 1 Cr - 3 Cr (HNI)</option>
+                    <option value="₹ 3 Cr - 10 Cr (Ultra HNI)">₹ 3 Cr - 10 Cr (Ultra HNI)</option>
+                    <option value="₹ 10 Cr+ (Institutional)">₹ 10 Cr+ (Institutional)</option>
+                  </select>
+                </div>
               </div>
-              <div>
-                <label style="font-size:0.8rem; font-weight:700; color:#1a0736;">Investment Bracket</label>
-                <select style="width:100%; padding:0.6rem; border:1px solid var(--border-light); border-radius:8px; margin-top:4px;">
-                  <option>₹ 1 Cr - 3 Cr (HNI)</option>
-                  <option>₹ 3 Cr - 10 Cr (Ultra HNI)</option>
-                  <option>₹ 10 Cr+ (Institutional)</option>
-                </select>
-              </div>
-            </div>
-            <button class="btn-dash-primary" onclick="window.location='404.html'">Generate Consultation Token</button>
+              <button type="submit" class="btn-dash-primary" id="btnGenerateToken">Generate Consultation Token</button>
+            </form>
           </div>
         </div>
 

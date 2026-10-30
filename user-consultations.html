@@ -243,21 +243,23 @@
           </div>
           <p style="font-size: 0.85rem; color: #645e78; margin-bottom: 1.2rem;">Submit a direct query to the legal and investment desk with guaranteed 2-hour SLA response</p>
           <div style="background:#ffffff; border:1px solid var(--border-light); border-radius:14px; padding:1.2rem;">
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:12px;">
-              <div>
-                <label style="font-size:0.8rem; font-weight:700; color:#1a0736;">Inquiry Subject</label>
-                <input type="text" value="Fairlands Mutation & Revenue Patta Transfer" style="width:100%; padding:0.6rem 0.8rem; border:1px solid var(--border-light); border-radius:8px; margin-top:4px;">
+            <form id="inquiryTicketForm" onsubmit="event.preventDefault(); window.location.href='404.html';">
+              <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:12px;">
+                <div>
+                  <label style="font-size:0.8rem; font-weight:700; color:#1a0736;">Inquiry Subject *</label>
+                  <input type="text" id="inquirySubject" name="inquirySubject" value="Fairlands Mutation & Revenue Patta Transfer" required minlength="3" style="width:100%; padding:0.6rem 0.8rem; border:1px solid var(--border-light); border-radius:8px; margin-top:4px; box-sizing: border-box;">
+                </div>
+                <div>
+                  <label style="font-size:0.8rem; font-weight:700; color:#1a0736;">Priority Category *</label>
+                  <select id="priorityCategory" name="priorityCategory" required style="width:100%; padding:0.6rem 0.8rem; border:1px solid var(--border-light); border-radius:8px; margin-top:4px; box-sizing: border-box;">
+                    <option value="Urgent Legal Vetting (< 2h SLA)">Urgent Legal Vetting (&lt; 2h SLA)</option>
+                    <option value="Financial Yield Modeling">Financial Yield Modeling</option>
+                    <option value="Escrow Disbursal Query">Escrow Disbursal Query</option>
+                  </select>
+                </div>
               </div>
-              <div>
-                <label style="font-size:0.8rem; font-weight:700; color:#1a0736;">Priority Category</label>
-                <select style="width:100%; padding:0.6rem 0.8rem; border:1px solid var(--border-light); border-radius:8px; margin-top:4px;">
-                  <option>Urgent Legal Vetting (&lt; 2h SLA)</option>
-                  <option>Financial Yield Modeling</option>
-                  <option>Escrow Disbursal Query</option>
-                </select>
-              </div>
-            </div>
-            <button class="btn-dash-primary" onclick="window.location='404.html'">Submit Inquiry Ticket</button>
+              <button type="submit" class="btn-dash-primary" id="btnSubmitInquiry">Submit Inquiry Ticket</button>
+            </form>
           </div>
         </div>
 
