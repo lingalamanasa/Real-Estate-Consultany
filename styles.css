@@ -5753,3 +5753,32 @@ body.menu-open {
     gap: 14px !important;
   }
 }
+
+
+/* Responsive Telemetry Split in Admin Dashboard */
+.dash-telemetry-split {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.2rem;
+  margin-bottom: 0;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .dash-telemetry-split {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+  }
+}
+
+/* Generic Responsive Dashboard Cards Grid */
+.dash-grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+@media (max-width: 768px) {
+  .dash-grid-responsive {
+    grid-template-columns: 1fr !important;
+  }
+}
